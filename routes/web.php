@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//user
+include 'user/user.php';
+
+//university
+include 'university/university.php';
