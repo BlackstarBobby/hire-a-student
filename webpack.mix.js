@@ -14,7 +14,18 @@ let mix = require('laravel-mix');
 
 /*Files to be compiled and combined in given order*/
 let jsFiles = [
-
+    'resources/assets/js/theme/jquery.min.js',
+    'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
+    'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
+    'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
+    'resources/assets/js/theme/jquery.counterup.min.js',
+    'resources/assets/js/theme/waypoints.min.js',
+    'resources/assets/js/theme/counter.js',
+    'resources/assets/js/theme/flexslider.js',
+    'resources/assets/js/theme/common.js',
+    'resources/assets/js/theme/wysihtml.js',
+    'resources/assets/js/theme/file.js',
+    'resources/assets/js/theme/login.tab.js',
 ];
 
 let compiledJsFiles = [];
@@ -30,18 +41,7 @@ jsFiles.forEach(function (file) {
 /*Files will be just copied to /public/compiled*/
 
 let copyJsFiles = [
-    'resources/assets/js/theme/jquery.min.js',
-    'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
-    'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
-    'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
-    'resources/assets/js/theme/jquery.counterup.min.js',
-    'resources/assets/js/theme/waypoints.min.js',
-    'resources/assets/js/theme/counter.js',
-    'resources/assets/js/theme/flexslider.js',
-    'resources/assets/js/theme/common.js',
-    'resources/assets/js/theme/wysihtml.js',
-    'resources/assets/js/theme/file.js',
-    'resources/assets/js/theme/login.tab.js',
+
 ];
 
 copyJsFiles.forEach(function (file) {
