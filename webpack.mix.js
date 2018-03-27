@@ -17,7 +17,7 @@ let jsFiles = [
     'resources/assets/js/theme/jquery.min.js',
     'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
     'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
-    'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
+    // 'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
     'resources/assets/js/theme/jquery.counterup.min.js',
     'resources/assets/js/theme/waypoints.min.js',
     'resources/assets/js/theme/counter.js',
@@ -53,6 +53,47 @@ mix.scripts(compiledJsFiles, 'public/dist/js/app.js')
     .sass('resources/assets/sass/app.scss', 'public/dist/css/app.css')
     .copy('resources/assets/img', 'public/dist/img')
     .version();
+
+/* Style files */
+
+let cssFiles =[
+    'resources/assets/css/bootstrap/css/bootstrap.min.css',
+    'resources/assets/css/flexslider/flexslider.css',
+    'resources/assets/css/font-awesome/css/font-awesome.css',
+    'resources/assets/css/themify/themify-icons.css',
+    'resources/assets/css/wysihtml5/wysihtml5.css',
+    'resources/assets/css/editor.css',
+    'resources/assets/css/responsive.css',
+    'resources/assets/css/style.css',
+
+    'resources/assets/css/student.css',
+];
+
+mix.styles(cssFiles, 'public/dist/css/app.css');
+
+/* Coping images to the public directory */
+
+mix.copy('resources/assets/img', 'public/dist/img');
+
+/* Coping other files to the public directory */
+
+let otherFiles =[
+    'resources/assets/css/flexslider/fonts/flexslider-icon.svg',
+    'resources/assets/css/flexslider/fonts/flexslider-icon.woff',
+    'resources/assets/css/font-awesome/fonts/FontAwesome.otf',
+    'resources/assets/css/font-awesome/fonts/fontawesome-webfont.eot',
+    'resources/assets/css/font-awesome/fonts/fontawesome-webfont.svg',
+    'resources/assets/css/font-awesome/fonts/fontawesome-webfont.ttf',
+    'resources/assets/css/font-awesome/fonts/fontawesome-webfont.woff',
+    'resources/assets/css/font-awesome/fonts/fontawesome-webfont.woff2',
+    'resources/assets/css/themify/font/themify.eot',
+    'resources/assets/css/themify/font/themify.svg',
+    'resources/assets/css/themify/font/themify.ttf',
+    'resources/assets/css/themify/font/themify.woff',
+
+];
+
+mix.copy(otherFiles, 'public/dist/fonts');
 
 if (!mix.inProduction()) {
 
