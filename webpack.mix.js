@@ -69,7 +69,8 @@ let cssFiles =[
     'resources/assets/css/student.css',
 ];
 
-mix.styles(cssFiles, 'public/dist/css/app.css');
+// mix.sass('resources/assets/sass/app.scss', 'public/dist/css/app.css')
+    mix.styles(cssFiles, 'public/dist/css/app.css');
 
 /* Coping images to the public directory */
 
@@ -94,6 +95,7 @@ let otherFiles =[
 ];
 
 mix.copy(otherFiles, 'public/dist/fonts');
+
 
 if (!mix.inProduction()) {
 
