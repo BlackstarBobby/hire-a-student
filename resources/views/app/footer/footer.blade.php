@@ -98,10 +98,9 @@
 {{--<script src="assets/js/counter.js"></script>--}}
 {{--<script src="assets/js/flexslider.js"></script>--}}
 {{--<script src="assets/js/common.js"></script>--}}
+{!! Html::script('dist/js/jquery.js') !!}
+{!! Html::script(mix('dist/js/app.js')) !!}
 
-@section('scripts')
-    HTML::script('{{mix('dist/js/app.js')}}')
-@endsection
 
 </body>
 </html>
