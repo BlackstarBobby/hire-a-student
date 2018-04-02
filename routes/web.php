@@ -17,10 +17,14 @@ Route::get('/', [
 ]);
 
 
-Route::get('/login', [
+Route::get('/log-in', [
     'as' => 'landing-page.login',
     'uses' => 'LandingPageController@login'
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 //user
 include 'user.php';
