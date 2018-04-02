@@ -79,32 +79,33 @@
                                         {{--</div>--}}
                                         {{--</div>--}}
                                         <form id="signup" method="post" action="{{route('register')}}">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <div class="form-group">
                                                 <label>Username</label>
                                                 <input type="text" class="form-control" id="first_name" required
                                                        data-validation-required-message="Please enter your name."
-                                                       autocomplete="off">
+                                                       autocomplete="off" name="name">
                                                 <div class="search_icon"><span class="ti-user"></span></div>
                                             </div>
                                             <div class="form-group">
                                                 <label> Email </label>
                                                 <input type="email" class="form-control" id="signup_email" required
                                                        data-validation-required-message="Please enter your email address."
-                                                       autocomplete="off">
+                                                       autocomplete="off" name="email">
                                                 <div class="search_icon"><span class="ti-email"></span></div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Password </label>
                                                 <input type="password" class="form-control" id="signup_password" required
                                                        data-validation-required-message="Please enter your password"
-                                                       autocomplete="off">
+                                                       autocomplete="off" name="password">
                                                 <div class="search_icon"><span class="ti-pin"></span></div>
                                             </div>
                                             <div class="form-group">
                                                 <label> Confirm Password </label>
                                                 <input type="password" class="form-control" id="confirm_password" required
                                                        data-validation-required-message="Please enter your password"
-                                                       autocomplete="off">
+                                                       autocomplete="off" name="confirm_password">
                                                 <div class="search_icon"><span class="ti-pin"></span></div>
                                             </div>
                                             <div class="mrgn-30-top">
