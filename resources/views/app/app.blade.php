@@ -1,13 +1,7 @@
 @include('app.header.header')
 
-<main id="maincontent">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-
-    <div class="banner-content text-center">
-        <h1 style="color: #000000">Website in progress</h1>
-    </div>
-
-
-</main>
+@yield('content')
 
 @include('app.footer.footer')

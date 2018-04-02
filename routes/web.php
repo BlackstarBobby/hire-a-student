@@ -11,14 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-//    return view('welcome');
-    return view('app.app');
-});
+Route::get('/', [
+    'as' => 'landingPage.index',
+    'uses' => 'LandingPageController@index'
+]);
 
+
+Route::get('/login', [
+    'as' => 'landing-page.login',
+    'uses' => 'LandingPageController@login'
+]);
 
 //user
-include 'user/user.php';
+include 'user.php';
 
 //university
-include 'university/university.php';
+include 'university.php';
