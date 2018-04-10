@@ -1,0 +1,1 @@
+// let PNotify = window.PNotify = require('pnotify/src/index');

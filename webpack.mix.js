@@ -28,6 +28,9 @@ let jsFiles = [
     // 'resources/assets/js/theme/wysihtml.js',
     'resources/assets/js/theme/file.js',
     'resources/assets/js/theme/login.tab.js',
+    // 'resources/assets/js/pnotify.custom.js',
+
+    'resources/assets/js/student.js',
 ];
 
 let compiledJsFiles = [];
@@ -51,6 +54,12 @@ copyJsFiles.forEach(function (file) {
     mix.copy(file, copyPath);
 });
 
+// let mergeJs = [
+//     'node_modules/pnotify/dist/es/PNotify.js',
+// ];
+//
+// compiledJsFiles.concat(mergeJs);
+
 mix.scripts(compiledJsFiles, 'public/dist/js/app.js')
     .sass('resources/assets/sass/app.scss', 'public/dist/css/app.css')
     .copy('resources/assets/img', 'public/dist/img')
@@ -69,6 +78,8 @@ let cssFiles =[
     'resources/assets/css/editor.css',
     'resources/assets/css/style.css',
     'resources/assets/css/responsive.css',
+    // 'node_modules/pnotify/dist/PNotifyBrightTheme.css',
+    'node_modules/animate.css/animate.css',
 
     'resources/assets/css/student.css',
 ];

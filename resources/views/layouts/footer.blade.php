@@ -87,20 +87,13 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>S
 
-{{--<!-- jQuery -->--}}
-{{--<script src="assets/js/jquery.min.js"></script>--}}
-{{--<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>--}}
-{{--<script src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>--}}
-{{--<script src="assets/js/jquery.counterup.min.js"></script>--}}
-{{--<script src="assets/js/waypoints.min.js"></script>--}}
-{{--<script src="assets/js/counter.js"></script>--}}
-{{--<script src="assets/js/flexslider.js"></script>--}}
-{{--<script src="assets/js/common.js"></script>--}}
 {!! Html::script('dist/js/jquery.js') !!}
 {!! Html::script(mix('dist/js/app.js')) !!}
+{!! Html::script('dist/js/pnotify.custom.js') !!}
 
+@yield('extraScripts')
 
 </body>
 </html>

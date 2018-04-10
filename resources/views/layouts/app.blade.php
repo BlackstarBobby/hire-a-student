@@ -1,7 +1,7 @@
-@include('app.header.header')
+@include('layouts.header')
 
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 @yield('content')
 
-@include('app.footer.footer')
+@include('layouts.footer')

@@ -16,15 +16,17 @@ Route::get('/', [
     'uses' => 'LandingPageController@index'
 ]);
 
-
-Route::get('/log-in', [
-    'as' => 'landing-page.login',
-    'uses' => 'LandingPageController@login'
-]);
-
 Auth::routes();
 
+Route::get('/logout', function () {
+    \Auth::logout();
+    return redirect('/');
+})->name('logout');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+//landing-page
+include 'landingPage.php';
 
 //user
 include 'user.php';
