@@ -21,11 +21,10 @@ class UsersUniversityJoin extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('university_id')->references('id')->on('university')
+            $table->foreign('university_id')->references('id')->on('universities')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
-
     }
 
     /**

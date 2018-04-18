@@ -15,22 +15,22 @@ let mix = require('laravel-mix');
 /*Files to be compiled and combined in given order*/
 let jsFiles = [
     // 'resources/assets/js/jquery-3.3.1.js',
+    'resources/assets/js/student.js',
     'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
-    'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
     // 'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
-    'resources/assets/js/theme/jquery.counterup.min.js',
+    'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
     // 'resources/assets/js/theme/waypoints.min.js',
+    'resources/assets/js/theme/jquery.counterup.min.js',
     'resources/assets/js/theme/jquery.waypoints.js',
-    'resources/assets/js/theme/counter.js',
     // 'resources/assets/js/theme/flexslider.js',
+    'resources/assets/js/theme/counter.js',
     'resources/assets/js/theme/jquery.flexslider.js',
-    'resources/assets/js/theme/common.js',
     // 'resources/assets/js/theme/wysihtml.js',
+    'resources/assets/js/theme/common.js',
     'resources/assets/js/theme/file.js',
-    'resources/assets/js/theme/login.tab.js',
     // 'resources/assets/js/pnotify.custom.js',
 
-    'resources/assets/js/student.js',
+    'resources/assets/js/theme/login.tab.js',
 ];
 
 let compiledJsFiles = [];

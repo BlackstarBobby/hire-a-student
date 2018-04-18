@@ -36,14 +36,26 @@
                                         <form id="signup" method="post" action="{{route('register')}}">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <div class="form-group">
-                                                <label>Username</label>
+                                                <label>Nume</label>
+                                                <input type="text" class="form-control" id="last_name" required
+                                                       data-validation-required-message="Please enter your name."
+                                                       autocomplete="off" name="last_name">
+                                                <div class="search_icon"><span class="ti-user"></span></div>
+                                                @if ($errors->has('last_name'))
+                                                    <span class="invalid-feedback">
+                                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Prenume</label>
                                                 <input type="text" class="form-control" id="first_name" required
                                                        data-validation-required-message="Please enter your name."
-                                                       autocomplete="off" name="name">
+                                                       autocomplete="off" name="first_name">
                                                 <div class="search_icon"><span class="ti-user"></span></div>
-                                                @if ($errors->has('name'))
+                                                @if ($errors->has('first_name'))
                                                     <span class="invalid-feedback">
-                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                        <strong>{{ $errors->first('first_name') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
@@ -60,7 +72,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label>Password </label>
+                                                <label>Parola </label>
                                                 <input type="password" class="form-control" id="signup_password"
                                                        required
                                                        data-validation-required-message="Please enter your password"
@@ -73,17 +85,16 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label> Confirm Password </label>
+                                                <label> Confirma Parola </label>
                                                 <input type="password" class="form-control" id="password_confirmation"
                                                        required
                                                        data-validation-required-message="Please enter your password"
                                                        autocomplete="off" name="password_confirmation">
                                                 <div class="search_icon"><span class="ti-pin"></span></div>
-                                                {{--@if ($errors->has('password'))--}}
-                                                    {{--<span class="invalid-feedback">--}}
-                                                        {{--<strong>{{ $errors->first('confirm_password') }}</strong>--}}
-                                                    {{--</span>--}}
-                                                {{--@endif--}}
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tip Cont</label>
+
                                             </div>
                                             <div class="mrgn-30-top">
                                                 <button type="submit" class="btn btn-larger btn-block">

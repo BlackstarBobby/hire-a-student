@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "animate.css": "^3.6.1",
+        "mdbootstrap": "^4.5.1",
         "pnotify": "^4.0.0-alpha.2"
     }
 }

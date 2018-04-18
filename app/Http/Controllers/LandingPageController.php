@@ -24,5 +24,4 @@ class LandingPageController extends Controller
 
         return view('auth.register');
     }
-
 }

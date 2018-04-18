@@ -11,7 +11,7 @@
 
         <div class="banner-content text-center">
             <h1 style="color: #000000">
-                Hello, @if(\Illuminate\Support\Facades\Auth::user()) {{\Illuminate\Support\Facades\Auth::user()->name}} @else
+                Hello, @if(\Illuminate\Support\Facades\Auth::user()) {{\Illuminate\Support\Facades\Auth::user()->first_name}} @else
                     Stranger @endif</h1>
         </div>
 
