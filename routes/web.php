@@ -33,3 +33,6 @@ include 'user.php';
 
 //university
 include 'university.php';
+
+//test
+include 'test.php';

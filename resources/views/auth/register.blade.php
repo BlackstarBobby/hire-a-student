@@ -94,7 +94,14 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Tip Cont</label>
-
+                                                <div class="row">
+                                                    <label class=" col-md-6">
+                                                        <input type="radio" name="account_type" value="candidate">Candidat
+                                                    </label>
+                                                    <label class=" col-md-6">
+                                                        <input type="radio" name="account_type" value="employer">Angajator
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div class="mrgn-30-top">
                                                 <button type="submit" class="btn btn-larger btn-block">

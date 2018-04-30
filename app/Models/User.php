@@ -2,12 +2,19 @@
 
 namespace App;
 
+use App\Models\Resume;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * Class User
+ * @package App
+ */
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -30,4 +37,12 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     *
+     */
+    public function resume()
+    {
+        return $this->hasOne(Resume::class);
+    }
 }
