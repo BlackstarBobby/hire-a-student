@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-</footer>S
+</footer>
 
 {!! Html::script('dist/js/jquery.js') !!}
 {!! Html::script(mix('dist/js/app.js')) !!}

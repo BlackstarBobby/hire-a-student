@@ -34,5 +34,8 @@ include 'user.php';
 //university
 include 'university.php';
 
+//resume
+include 'resume.php';
+
 //test
 include 'test.php';
