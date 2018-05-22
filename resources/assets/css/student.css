@@ -1,0 +1,18 @@
+li{
+    list-style: none;
+}
+
+.user-dropdown-img {
+    height: 50px;
+    border-radius: 25px;
+}
+
+.user-dropdown > .dropdown-menu {
+    background-color: #033036;
+    border: none;
+    border-radius: 0px;
+    left: 50px;
+    right: 0;
+    padding: 0px;
+    box-shadow: none;
+}

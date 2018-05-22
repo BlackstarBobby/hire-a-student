@@ -17,7 +17,7 @@ class AvatarUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->default('dist/img/default_avatar.png');
+            $table->string('avatar')->default('/dist/img/default_avatar.png');
         });
     }
 

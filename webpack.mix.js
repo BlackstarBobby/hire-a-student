@@ -14,7 +14,6 @@ let mix = require('laravel-mix');
 
 /*Files to be compiled and combined in given order*/
 let jsFiles = [
-    // 'resources/assets/js/jquery-3.3.1.js',
     'resources/assets/js/student.js',
     'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
     // 'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
@@ -28,7 +27,7 @@ let jsFiles = [
     // 'resources/assets/js/theme/wysihtml.js',
     'resources/assets/js/theme/common.js',
     'resources/assets/js/theme/file.js',
-    // 'resources/assets/js/pnotify.custom.js',
+    'resources/assets/js/ckeditor.js',
 
     'resources/assets/js/theme/login.tab.js',
 ];
@@ -73,13 +72,13 @@ let cssFiles =[
     'resources/assets/css/bootstrap/css/bootstrap.min.css',
     'resources/assets/css/flexslider/flexslider.css',
     'resources/assets/css/font-awesome/css/font-awesome.css',
+    'node_modules/animate.css/animate.css',
     'resources/assets/css/themify/themify-icons.css',
     // 'resources/assets/css/wysihtml5/wysihtml5.css',
-    'resources/assets/css/editor.css',
+    // 'resources/assets/css/editor.css',
     'resources/assets/css/style.css',
     'resources/assets/css/responsive.css',
     // 'node_modules/pnotify/dist/PNotifyBrightTheme.css',
-    'node_modules/animate.css/animate.css',
 
     'resources/assets/css/student.css',
 ];
@@ -106,11 +105,16 @@ let otherFiles =[
     'resources/assets/css/themify/font/themify.svg',
     'resources/assets/css/themify/font/themify.ttf',
     'resources/assets/css/themify/font/themify.woff',
+    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.eot',
+    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.svg',
+    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.ttf',
+    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.woff',
+    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.woff2',
 
 ];
 
 mix.copy(otherFiles, 'public/dist/fonts');
-
+mix.copy('resources/assets/fonts', 'public/dist/fonts');
 
 if (!mix.inProduction()) {
 
