@@ -6,18 +6,21 @@
  * Time: 21:30
  */
 
-Route::get('/user', [
-    'as' => 'user.index',
-    'uses' => 'UsersController@index'
-]);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/user', [
+        'as' => 'user.index',
+        'uses' => 'UsersController@index'
+    ]);
 
 
-Route::get('/user/edit', [
-    'as' => 'user.edit',
-    'uses' => 'UsersController@edit'
-]);
+    Route::get('/user/edit', [
+        'as' => 'user.edit',
+        'uses' => 'UsersController@edit'
+    ]);
 
-Route::post('/user/update', [
-    'as' => 'user.update',
-    'uses' => 'UsersController@update'
-]);
+    Route::post('/user/update', [
+        'as' => 'user.update',
+        'uses' => 'UsersController@update'
+    ]);
+});

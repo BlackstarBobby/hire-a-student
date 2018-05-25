@@ -13,7 +13,7 @@ class ResumeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,7 @@ class ResumeRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'value.contact.first_name' => 'required',
             'value.contact.last_name' => 'required',
@@ -36,12 +37,12 @@ class ResumeRequest extends FormRequest
     public function messages()
     {
         return [
-            'value.contact.first_name' => 'required',
-            'value.contact.last_name' => 'required',
-            'value.contact.title' => 'required',
-            'value.contact.phone' => 'required',
-            'value.contact.birth_date' => 'required|date',
-            'value.contact.address' => 'required',
+            'value.contact.first_name.required' => 'Prenumele este necesar',
+            'value.contact.last_name.required' => 'Numele este necesar',
+            'value.contact.title.required' => 'Titlul este necesar',
+            'value.contact.phone.required' => 'required',
+            'value.contact.birth_date.required' => 'required|date',
+            'value.contact.address.required' => 'required',
         ];
     }
 

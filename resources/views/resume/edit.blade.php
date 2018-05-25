@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<?php if ($resume) dump($resume); ?>
+
 @section('content')
     <main id="maincontent">
         <section class="resume">
@@ -18,18 +20,37 @@
                 </div>
                 <div class="row">
                     <form action="{{route('resume.update')}}" method="POST">
+                        @csrf
                         <div class="col-md-12">
                             {{--Contact information--}}
                             <div class="panel-body">
                                 <div class="panel-heading">Date de contact</div>
                                 <hr>
+
+                                @if(isset($resume['value']['basic']))
+
+                                    @foreach($resume['value']['basic'] as $basic)
+                                        @include('resume.edit.field', [
+                                            'labelName' => '',
+                                            'inputName' => '',
+                                            'errorName' => ''
+                                        ])
+                                    @endforeach
+
+                                @endif
+
                                 <div class="form-group col-md-6 p-l">
                                     <label>Prenume</label>
-                                    <input type="text" class="form-control" name="[value][contact][first_name]"/>
+                                    <input type="text" class="form-control" name="value[contact][first_name]"/>
+                                    @if ($errors->has('value.contact.first_name'))
+                                        <span class="invalid-feedback">
+                                                        <strong>{{ $errors->first('value.contact.first_name') }}</strong>
+                                                    </span>
+                                    @endif
                                 </div>
                                 <div class="form-group col-md-6 p-r">
                                     <label>Nume</label>
-                                    <input type="text" class="form-control" name="[value][contact][last_name]"/>
+                                    <input type="text" class="form-control" name="value[contact][last_name]"/>
                                 </div>
                                 <div class="form-group col-md-6 p-l">
                                     {{--<label>Poza <span>(optional)</span></label>--}}
@@ -43,29 +64,29 @@
                                 </div>
 
                                 {{--<div class="form-group custom-file">--}}
-                                    {{--<input type="file" class="custom-file-input" id="customFile">--}}
-                                    {{--<label class="custom-file-label" for="customFile">Choose file</label>--}}
+                                {{--<input type="file" class="custom-file-input" id="customFile">--}}
+                                {{--<label class="custom-file-label" for="customFile">Choose file</label>--}}
                                 {{--</div>--}}
                                 <div class="form-group col-md-6 p-r">
                                     <label>Titlu Profesional</label>
-                                    <input type="text" class="form-control" name="[value][contact][title]"/>
+                                    <input type="text" class="form-control" name="value[contact][title]"/>
                                 </div>
                                 <div class="form-group col-md-6 p-r">
                                     <label>Numar telefon</label>
-                                    <input type="text" class="form-control" name="[value][contact][phone]"/>
+                                    <input type="text" class="form-control" name="value[contact][phone]"/>
                                 </div>
                                 <div class="form-group col-md-6 p-l">
                                     <label>Data Nasterii</label>
                                     {{--<input type="text" class="form-control"/>--}}
                                     {{--<input type='text' class="form-control"/>--}}
                                     {{--<span class="input-group-addon">--}}
-                                            {{--<span class="glyphicon glyphicon-calendar"></span>--}}
+                                    {{--<span class="glyphicon glyphicon-calendar"></span>--}}
                                     {{--</span>--}}
-                                    <input type="date" class="form-control" name="[value][contact][birth_date]">
+                                    <input type="date" class="form-control" name="value[contact][birth_date]">
                                 </div>
                                 <div class="form-group col-md-6   p-r">
                                     <label>Adresa</label>
-                                    <input type="text" class="form-control" name="[value][contact][address]"/>
+                                    <input type="text" class="form-control" name="value[contact][address]"/>
                                 </div>
                                 {{--<div class="borderfull-width"></div>--}}
                                 {{--<div class="panel-heading">Basic Information</div>--}}
@@ -249,11 +270,13 @@
                                 {{--<div id="demo3" class="collapse"></div>--}}
                                 {{--</div>--}}
                                 {{--</div>--}}
+                                {{--<div class="col-md-4 p-l">--}}
+                                {{--<a href="#" class="btn btn-default btn-block">Preview Your Resume</a>--}}
+                                {{--</div>--}}
                                 <div class="col-md-4 p-l">
-                                    <a href="#" class="btn btn-default btn-block">Preview Your Resume</a>
-                                </div>
-                                <div class="col-md-4 p-l">
-                                    <button type="submit" class="btn btn-default btn-block saveCv">Salveaza modificarile</button>
+                                    <button type="submit" class="btn btn-default btn-block saveCv">Salveaza
+                                        modificarile
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -91,6 +91,7 @@
         </div>
     </div>
 </div>
+<hr class="header-divider">
 @include('layouts.header')
 
 <input type="hidden" name="_token" value="{{ csrf_token() }}">

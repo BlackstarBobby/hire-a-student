@@ -12,9 +12,19 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
-    $user = User::find(3);
+    $user = \Illuminate\Support\Facades\Auth::user();
+//    $resumeStruc = \App\Models\Resume::getResumeStructure();
+//
+//    $resumeStruc['value']['basic']['first_name'] = 'Bobby';
+//    $resumeStruc['value']['basic']['last_name'] = 'Bob';
+//
+//    $resume = new \App\Models\Resume();
+//
+//    $resume->user_id = \Illuminate\Support\Facades\Auth::id();
+//    $resume->resume = json_encode($resumeStruc);
+//    $check = $resume->save();
+    dd($user->resume);
 
-    dd($user->resume());
 //    dd($user->syncRoles('candidate'));
 //
     die;

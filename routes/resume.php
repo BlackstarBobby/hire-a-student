@@ -6,17 +6,19 @@
  * Time: 20:54
  */
 
-Route::get('/resume', [
-    'as' => 'resume',
-    'uses' => 'ResumeController@index'
-]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/resume', [
+        'as' => 'resume',
+        'uses' => 'ResumeController@index'
+    ]);
 
-Route::get('/resume/edit', [
-    'as' => 'resume.edit',
-    'uses' => 'ResumeController@edit'
-]);
+    Route::get('/resume/edit', [
+        'as' => 'resume.edit',
+        'uses' => 'ResumeController@edit'
+    ]);
 
-Route::post('/resume/update', [
-    'as' => 'resume.update',
-    'uses' => 'ResumeController@update'
-]);
+    Route::post('/resume/update', [
+        'as' => 'resume.update',
+        'uses' => 'ResumeController@update'
+    ]);
+});

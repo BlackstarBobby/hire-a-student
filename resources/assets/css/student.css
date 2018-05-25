@@ -1,4 +1,4 @@
-li{
+li {
     list-style: none;
 }
 
@@ -15,4 +15,18 @@ li{
     right: 0;
     padding: 0px;
     box-shadow: none;
+}
+
+.header-divider {
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .header-divider {
+        display: none;
+    }
+}
+
+.invalid-feedback{
+    color: red;
 }
