@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<?php if ($resume) dump($resume); ?>
+<?php if ($resume) dump($resume, $errors); ?>
 
 @section('content')
     <main id="maincontent">
@@ -27,67 +27,10 @@
                                 <div class="panel-heading">Date de contact</div>
                                 <hr>
 
-                                @if(isset($resume['value']['basic']))
+                                @include('resume.edit.basic')
 
-                                    @foreach($resume['value']['basic'] as $basic)
-                                        @include('resume.edit.field', [
-                                            'labelName' => '',
-                                            'inputName' => '',
-                                            'errorName' => ''
-                                        ])
-                                    @endforeach
 
-                                @endif
 
-                                <div class="form-group col-md-6 p-l">
-                                    <label>Prenume</label>
-                                    <input type="text" class="form-control" name="value[contact][first_name]"/>
-                                    @if ($errors->has('value.contact.first_name'))
-                                        <span class="invalid-feedback">
-                                                        <strong>{{ $errors->first('value.contact.first_name') }}</strong>
-                                                    </span>
-                                    @endif
-                                </div>
-                                <div class="form-group col-md-6 p-r">
-                                    <label>Nume</label>
-                                    <input type="text" class="form-control" name="value[contact][last_name]"/>
-                                </div>
-                                <div class="form-group col-md-6 p-l">
-                                    {{--<label>Poza <span>(optional)</span></label>--}}
-                                    {{--<input type="file" name="img[]" class="file form-control">--}}
-                                    {{--<input type="text" class="form-control"/>--}}
-                                    {{--<span class="input-group-btn text-right">--}}
-                                    {{--<button class="browse btn btn-default input-lg"--}}
-                                    {{--type="button"> Post</button>--}}
-                                    {{--</span>--}}
-
-                                </div>
-
-                                {{--<div class="form-group custom-file">--}}
-                                {{--<input type="file" class="custom-file-input" id="customFile">--}}
-                                {{--<label class="custom-file-label" for="customFile">Choose file</label>--}}
-                                {{--</div>--}}
-                                <div class="form-group col-md-6 p-r">
-                                    <label>Titlu Profesional</label>
-                                    <input type="text" class="form-control" name="value[contact][title]"/>
-                                </div>
-                                <div class="form-group col-md-6 p-r">
-                                    <label>Numar telefon</label>
-                                    <input type="text" class="form-control" name="value[contact][phone]"/>
-                                </div>
-                                <div class="form-group col-md-6 p-l">
-                                    <label>Data Nasterii</label>
-                                    {{--<input type="text" class="form-control"/>--}}
-                                    {{--<input type='text' class="form-control"/>--}}
-                                    {{--<span class="input-group-addon">--}}
-                                    {{--<span class="glyphicon glyphicon-calendar"></span>--}}
-                                    {{--</span>--}}
-                                    <input type="date" class="form-control" name="value[contact][birth_date]">
-                                </div>
-                                <div class="form-group col-md-6   p-r">
-                                    <label>Adresa</label>
-                                    <input type="text" class="form-control" name="value[contact][address]"/>
-                                </div>
                                 {{--<div class="borderfull-width"></div>--}}
                                 {{--<div class="panel-heading">Basic Information</div>--}}
                                 {{--<hr>--}}

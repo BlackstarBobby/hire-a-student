@@ -15,15 +15,17 @@ Route::get('/test', function () {
     $user = \Illuminate\Support\Facades\Auth::user();
 //    $resumeStruc = \App\Models\Resume::getResumeStructure();
 //
-//    $resumeStruc['value']['basic']['first_name'] = 'Bobby';
-//    $resumeStruc['value']['basic']['last_name'] = 'Bob';
+//    $resumeStruc['basic']['first_name'] = 'Bobby';
+//    $resumeStruc['basic']['last_name'] = 'Bob';
 //
 //    $resume = new \App\Models\Resume();
 //
 //    $resume->user_id = \Illuminate\Support\Facades\Auth::id();
 //    $resume->resume = json_encode($resumeStruc);
 //    $check = $resume->save();
-    dd($user->resume);
+//    dd($user->resume);
+
+    dd(\Illuminate\Support\Facades\Auth::user()->resume);
 
 //    dd($user->syncRoles('candidate'));
 //

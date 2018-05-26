@@ -23,26 +23,25 @@ class ResumeRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
-            'value.contact.first_name' => 'required',
-            'value.contact.last_name' => 'required',
-            'value.contact.title' => 'required',
-            'value.contact.phone' => 'required',
-            'value.contact.birth_date' => 'required|date',
-            'value.contact.address' => 'required',
+            'value.basic.first_name' => 'required',
+            'value.basic.last_name' => 'required',
+            'value.basic.title' => 'required',
+            'value.basic.phone' => 'required',
+            'value.basic.birth_date' => 'required|date',
+            'value.basic.address' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'value.contact.first_name.required' => 'Prenumele este necesar',
-            'value.contact.last_name.required' => 'Numele este necesar',
-            'value.contact.title.required' => 'Titlul este necesar',
-            'value.contact.phone.required' => 'required',
-            'value.contact.birth_date.required' => 'required|date',
-            'value.contact.address.required' => 'required',
+            'value.basic.first_name.required' => 'Prenumele este necesar',
+            'value.basic.last_name.required' => 'Numele este necesar',
+            'value.basic.title.required' => 'Titlul este necesar',
+            'value.basic.phone.required' => 'Numarul este necesar',
+            'value.basic.birth_date.required' => 'Data nasterii este necesara',
+            'value.basic.address.required' => 'Adresa este necesara',
         ];
     }
 

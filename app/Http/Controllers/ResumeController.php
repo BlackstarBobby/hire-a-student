@@ -41,7 +41,8 @@ class ResumeController extends Controller
         $resume = Resume::select(['resume'])
             ->where('user_id', Auth::id())
             ->first();
-        $data['resume'] = json_decode($resume->resume);
+
+        $data['resume'] = json_decode($resume->resume ?? null);
 
         return view('resume.edit', $data);
     }
@@ -51,9 +52,22 @@ class ResumeController extends Controller
      */
     public function update(ResumeRequest $request)
     {
-        http_response_code(500);
-        dump($request);
-        dd($request);
+        $resume = null;
+        if ($request->has('value')) {
+            $resume = $request->get('value');
+        }
+
+        if ($resume) {
+            $userResume = Auth::user()->resume;
+
+            if ($userResume) {
+                $userResume->resume = json_encode($resume);
+                $userResume->save();
+            } else {
+            }
+        }
+
+        return view('resume.index');
     }
 
 

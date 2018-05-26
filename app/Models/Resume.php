@@ -23,32 +23,32 @@ class Resume extends Model
 //                        'label' => '',
 //                        'value' => []
                     ],
-                    'last_name' => [],
-                    'title' => [],
-                    'phone' => [],
-                    'date_of_birth' => [],
-                    'address' => []
+                    'last_name' => '',
+                    'title' => '',
+                    'phone' => '',
+                    'date_of_birth' => '',
+                    'address' => ''
                 ],
-                'description' => [],
+                'description' => '',
                 'education' => [
                     'school' => [
-                        'institution' => [],
-                        'diploma' => [],
-                        'study_field' => [],
-                        'notes' => [],
-                        'description' => [],
-                        'start_year' => [],
-                        'end_year' => []
+                        'institution' => '',
+                        'diploma' => '',
+                        'study_field' => '',
+                        'notes' => '',
+                        'description' => '',
+                        'start_year' => '',
+                        'end_year' => ''
                     ]
                 ],
                 'experience' => [
                     'job' => [
-                        'title' => [],
-                        'company' => [],
-                        'location' => [],
-                        'description' => [],
-                        'start_date' => [],
-                        'end_date' => []
+                        'title' => '',
+                        'company' => '',
+                        'location' => '',
+                        'description' => '',
+                        'start_date' => '',
+                        'end_date' => ''
                     ]
                 ],
                 'abilities' => [
