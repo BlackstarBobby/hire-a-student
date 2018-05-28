@@ -49,6 +49,7 @@ class ResumeController extends Controller
 
     /**
      * @param ResumeRequest $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function update(ResumeRequest $request)
     {
@@ -67,7 +68,7 @@ class ResumeController extends Controller
             }
         }
 
-        return view('resume.index');
+        return redirect()->route('resume');
     }
 
 
