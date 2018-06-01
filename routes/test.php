@@ -26,9 +26,10 @@ Route::get('/test', function () {
 //
 //    dd($user->company);
 
+    $faker = \Faker\Factory::create();
+
     dd(
-        $users = \App\Models\User::limit(100)
-            ->get()
+        $faker->paragraphs(10, 1)
     );
 
 //

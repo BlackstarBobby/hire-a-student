@@ -39,5 +39,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //resume
     include 'resume.php';
 
+//companies
+include 'companies.php';
+
 //test
     include 'test.php';

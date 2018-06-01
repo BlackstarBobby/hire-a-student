@@ -26,12 +26,13 @@ class CompaniesSeeder extends Seeder
 
                 $companies->push([
                     'company_name' => $faker->company,
-                    'description' => $faker->text(300),
+                    'description' => $faker->paragraphs(50, 1),
                     'user_id' => $users[$i]->id,
                     'logo' => '/dist/img/company-avatar.png',
                     'phone' => $faker->phoneNumber,
                     'email' => $faker->companyEmail,
                     'website' => $faker->domainName,
+                    'location' => $faker->address,
                 ]);
             }
 
