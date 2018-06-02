@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CompaniesController extends Controller
 {
@@ -28,5 +29,20 @@ class CompaniesController extends Controller
         $data['company'] = Company::findOrFail($company->id);
 
         return view('companies.index.index', $data);
+    }
+
+    public function edit(Company $company, Request $request)
+    {
+        $data = [];
+
+        $data['company'] = Auth::user()->company;
+
+        return view('companies.edit', $data);
+    }
+
+    public function update(Company $company, Request $request){
+
+
+
     }
 }

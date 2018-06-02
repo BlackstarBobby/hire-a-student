@@ -29,7 +29,7 @@ Route::get('/test', function () {
     $faker = \Faker\Factory::create();
 
     dd(
-        $faker->paragraphs(10, 1)
+        User::find(200)->company
     );
 
 //

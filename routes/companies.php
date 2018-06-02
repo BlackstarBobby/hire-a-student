@@ -11,7 +11,18 @@ Route::get('/companies', [
     'uses' => 'CompaniesController@list'
 ]);
 
-Route::get('/company/{company}', [
+Route::get('/companies/{company}', [
     'as' => 'companies.index',
     'uses' => 'CompaniesController@index'
 ]);
+
+Route::get('/company/edit/{company}', [
+    'as' => 'companies.edit',
+    'uses' => 'CompaniesController@edit'
+]);
+
+Route::get('/company/update/{company}', [
+    'as' => 'companies.update',
+    'uses' => 'CompaniesController@update'
+]);
+
