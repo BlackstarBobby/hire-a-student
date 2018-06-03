@@ -6,6 +6,8 @@ use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class CompaniesController extends Controller
 {
@@ -45,8 +47,30 @@ class CompaniesController extends Controller
     {
         $data = [];
 
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = $company->company_name . '.' . $extension;
+            $file->move(public_path('uploads/logos'), $filename);
+        }
+
+        $company = Auth::user()->company;
+        //todo finish saving the request
+        if ($company) {
+            $company->update(
+                $request->only([
+                    'company_name',
+                //'description',
+                    'logo',
+                    'phone'
+                ])
+            );
+        }
+
         $data['company'] = Auth::user()->company;
 
-        return view('companies.index.index', $data);
+
+//        return view('companies.index.index', $data);
     }
 }

@@ -81,6 +81,7 @@ let cssFiles =[
     // 'node_modules/pnotify/dist/PNotifyBrightTheme.css',
 
     'resources/assets/css/student.css',
+    'resources/assets/css/student.scss',
 ];
 
 // mix.sass('resources/assets/sass/app.scss', 'public/dist/css/app.css')

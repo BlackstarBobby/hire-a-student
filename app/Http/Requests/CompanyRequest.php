@@ -26,8 +26,7 @@ class CompanyRequest extends FormRequest
     {
         return [
             'company_name' => 'required',
-            'description' => 'required',
-//            'phone' => 'string',
+//            'description' => 'required',
         ];
     }
 
@@ -35,9 +34,7 @@ class CompanyRequest extends FormRequest
     {
         return [
             'company_name.required' => 'Numele este necesar',
-            'description.required' => 'Descrierea este necesara'
+//            'description.required' => 'Descrierea este necesara'
         ];
     }
-
-
 }

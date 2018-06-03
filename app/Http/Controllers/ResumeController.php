@@ -29,7 +29,6 @@ class ResumeController extends Controller
      */
     public function store()
     {
-
     }
 
     /**
@@ -70,6 +69,4 @@ class ResumeController extends Controller
 
         return redirect()->route('resume');
     }
-
-
 }

@@ -44,6 +44,4 @@ class ResumeRequest extends FormRequest
             'value.basic.address.required' => 'Adresa este necesara',
         ];
     }
-
-
 }
