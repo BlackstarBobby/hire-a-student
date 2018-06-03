@@ -27,14 +27,15 @@ class CompanyRequest extends FormRequest
         return [
             'company_name' => 'required',
             'description' => 'required',
-
+//            'phone' => 'string',
         ];
     }
 
     public function messages()
     {
         return [
-
+            'company_name.required' => 'Numele este necesar',
+            'description.required' => 'Descrierea este necesara'
         ];
     }
 

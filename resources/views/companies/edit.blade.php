@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="{{route('resume.update')}}" method="POST">
+                    <form action="{{route('companies.update', ['company' => $company->id])}}" method="POST">
                         @csrf
                         <div class="col-md-12">
                             {{--Contact information--}}
@@ -29,11 +29,11 @@
                                     <input type="text" class="form-control" name="company_name"
                                            value=""
                                     />
-                                    {{--@if ($errors->has('value.basic.first_name'))--}}
-                                        {{--<span class="invalid-feedback">--}}
-                                        {{--<strong>{{ $errors->first('value.basic.first_name') }}</strong>--}}
-                                    {{--</span>--}}
-                                    {{--@endif--}}
+                                    @if ($errors->has('company_name'))
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('company_name') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -99,6 +99,11 @@
                                     />
                                 </div>
 
+                            </div>
+                            <div class="col-md-4 p-l">
+                                <button type="submit" class="btn btn-default btn-block saveCv">Salveaza
+                                    modificarile
+                                </button>
                             </div>
                         </div>
                     </form>

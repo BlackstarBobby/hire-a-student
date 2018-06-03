@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,9 +41,12 @@ class CompaniesController extends Controller
         return view('companies.edit', $data);
     }
 
-    public function update(Company $company, Request $request){
+    public function update(Company $company, CompanyRequest $request)
+    {
+        $data = [];
 
+        $data['company'] = Auth::user()->company;
 
-
+        return view('companies.index.index', $data);
     }
 }

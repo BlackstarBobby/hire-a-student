@@ -21,7 +21,7 @@ Route::get('/company/edit/{company}', [
     'uses' => 'CompaniesController@edit'
 ]);
 
-Route::get('/company/update/{company}', [
+Route::post('/company/update/{company}', [
     'as' => 'companies.update',
     'uses' => 'CompaniesController@update'
 ]);
