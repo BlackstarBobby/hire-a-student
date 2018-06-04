@@ -47,30 +47,59 @@ class CompaniesController extends Controller
     {
         $data = [];
 
-
+        $savedFile = null;
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $extension = $file->getClientOriginalExtension(); // getting image extension
             $filename = $company->company_name . '.' . $extension;
-            $file->move(public_path('uploads/logos'), $filename);
+            $savedFile = $file->move(public_path('uploads/logos'), $filename);
+            if ($savedFile) {
+                $savedFile = 'uploads/logos/' . $savedFile->getFilename();
+            }
         }
 
         $company = Auth::user()->company;
         //todo finish saving the request
-        if ($company) {
-            $company->update(
-                $request->only([
-                    'company_name',
+
+        $updateData = [];
+        if ($savedFile) {
+            $updateData = array_merge($request->only([
+                'company_name',
                 //'description',
-                    'logo',
-                    'phone'
-                ])
-            );
+                'logo',
+                'phone',
+                'email',
+                'website',
+                'facebook',
+                'twitter',
+                'linkedin',
+                'google_plus',
+                'map'
+            ]), ['logo' => $savedFile]);
+        } else {
+            $updateData = $request->only([
+                'company_name',
+                //'description',
+                'logo',
+                'phone',
+                'email',
+                'website',
+                'facebook',
+                'twitter',
+                'linkedin',
+                'google_plus',
+                'map'
+            ]);
+        }
+
+        if ($company) {
+            $company->update($updateData);
+            $company->save();
         }
 
         $data['company'] = Auth::user()->company;
 
 
-//        return view('companies.index.index', $data);
+        return view('companies.index.index', $data);
     }
 }
