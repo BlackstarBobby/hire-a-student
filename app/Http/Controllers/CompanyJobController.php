@@ -9,5 +9,10 @@ class CompanyJobController extends Controller
 {
     public function index(CompanyJob $companyJob, Request $request)
     {
+        $data = [];
+
+        $data['job'] = $companyJob;
+
+        return view('jobs.index', $data);
     }
 }
