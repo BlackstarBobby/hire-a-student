@@ -26,21 +26,23 @@ Route::get('/logout', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 //landing-page
-    include 'landingPage.php';
+include 'landingPage.php';
 
 //user
-    include 'user.php';
+include 'user.php';
 
 //university
-    include 'university.php';
+include 'university.php';
 
 //resume
-    include 'resume.php';
+include 'resume.php';
 
 //companies
 include 'companies.php';
 
 //test
-    include 'test.php';
+include 'test.php';
+
+//jobs
+include 'jobs.php';
