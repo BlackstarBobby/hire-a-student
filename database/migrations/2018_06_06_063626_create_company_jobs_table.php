@@ -20,7 +20,7 @@ class CreateCompanyJobsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('job_type');
-            $table->integer('salary')->nullable();
+            $table->string('salary')->nullable();
             $table->string('city');
         });
     }

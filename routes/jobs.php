@@ -6,3 +6,7 @@
  * Time: 10:47
  */
 
+Route::get('/job/{companyJob}', [
+    'as' => 'job.index',
+    'uses' => 'CompanyJobController@index'
+]);

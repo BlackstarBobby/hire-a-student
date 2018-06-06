@@ -12,4 +12,9 @@ class Company extends Model
     {
         $this->belongsTo(User::class, 'user_id');
     }
+
+    public function jobs()
+    {
+        return $this->hasMany(CompanyJob::class);
+    }
 }
