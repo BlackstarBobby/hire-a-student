@@ -17,13 +17,13 @@ class UsersUniversityJoin extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('university_id');
 
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('university_id')->references('id')->on('universities')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+//            $table->foreign('user_id')->references('id')->on('users')
+//                ->onDelete('cascade')
+//                ->onUpdate('cascade');
+//
+//            $table->foreign('university_id')->references('id')->on('universities')
+//                ->onDelete('cascade')
+//                ->onUpdate('cascade');
         });
     }
 
