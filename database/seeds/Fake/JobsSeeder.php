@@ -19,6 +19,8 @@ class JobsSeeder extends Seeder
 
         $jobs = collect();
 
+        $job_types = \App\Models\CompanyJob::getJobTypes();
+
         foreach ($companies as $company) {
             for ($i = 0; $i < rand(1, 10); $i++) {
                 $jobs->push([
@@ -27,7 +29,7 @@ class JobsSeeder extends Seeder
                     'company_id' => $company,
                     'title' => $faker->jobTitle,
                     'description' => $faker->paragraphs(20, 1),
-                    'job_type' => array_rand(\App\Models\CompanyJob::getJobTypes()),
+                    'job_type' => $job_types[array_rand($job_types)],
                     'salary' => rand(100, 10000) . '$',
                     'city' => 'Bucharest'
                 ]);

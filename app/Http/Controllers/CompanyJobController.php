@@ -15,4 +15,13 @@ class CompanyJobController extends Controller
 
         return view('jobs.index', $data);
     }
+
+    public function list(Request $request)
+    {
+        $data = [];
+
+        $data['jobs'] = CompanyJob::paginate(10);
+
+        return view('jobs.list.list', $data);
+    }
 }

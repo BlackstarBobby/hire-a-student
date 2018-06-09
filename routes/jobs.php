@@ -10,3 +10,8 @@ Route::get('/job/{companyJob}', [
     'as' => 'job.index',
     'uses' => 'CompanyJobController@index'
 ]);
+
+Route::get('/jobs', [
+    'as' => 'job.list',
+    'uses' => 'CompanyJobController@list'
+]);

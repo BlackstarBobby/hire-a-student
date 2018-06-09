@@ -39,6 +39,7 @@
                             <li><a href="{{route('landingPage.index')}}">Acasa</a></li>
                             <li><a href="{{route('resume')}}">CV</a></li>
                             <li><a href="{{route('companies.list')}}">Companies</a></li>
+                            <li><a href="{{route('job.list')}}">Jobs</a></li>
                             {{--<li class="dropdown">--}}
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Jobs <i--}}
                             {{--class="fa fa-angle-down"></i></a>--}}

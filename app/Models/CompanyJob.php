@@ -8,12 +8,12 @@ class CompanyJob extends Model
 {
     protected $table = 'company_jobs';
 
-    public static $FULL_TIME = 10;
-    public static $PART_TIME = 20;
-    public static $FREELANCER = 30;
-    public static $PRACTICE = 40;
-    public static $VOLUNTEER = 50;
-    public static $PROJECT = 60;
+    const FULL_TIME = 10;
+    const PART_TIME = 20;
+    const FREELANCER = 30;
+    const PRACTICE = 40;
+    const VOLUNTEER = 50;
+    const PROJECT = 60;
 
     public function company()
     {
@@ -23,12 +23,12 @@ class CompanyJob extends Model
     public static function getJobTypes()
     {
         return [
-            self::$FULL_TIME,
-            self::$PART_TIME,
-            self::$FREELANCER,
-            self::$PRACTICE,
-            self::$VOLUNTEER,
-            self::$PROJECT,
+            self::FULL_TIME,
+            self::PART_TIME,
+            self::FREELANCER,
+            self::PRACTICE,
+            self::VOLUNTEER,
+            self::PROJECT,
         ];
     }
 }
