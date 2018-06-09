@@ -7,27 +7,34 @@
  */
 
 
-use App\User;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
-    $user = \Illuminate\Support\Facades\Auth::user();
-//    $resumeStruc = \App\Models\Resume::getResumeStructure();
-//
-//    $resumeStruc['basic']['first_name'] = 'Bobby';
-//    $resumeStruc['basic']['last_name'] = 'Bob';
-//
-//    $resume = new \App\Models\Resume();
-//
-//    $resume->user_id = \Illuminate\Support\Facades\Auth::id();
-//    $resume->resume = json_encode($resumeStruc);
-//    $check = $resume->save();
-//    dd($user->resume);
+    $job = \App\Models\CompanyJob::find(1);
+    dd($job->company);
 
-    dd(\Illuminate\Support\Facades\Auth::user()->resume);
+//    $company = new \App\Models\Company();
+//    $company->company_name = 'TestCompany No.2';
+//    $company->description = 'Just another test';
+//    $company->user_id = \Illuminate\Support\Facades\Auth::id();
+//
+//    $company->save();
+//
+//
+////    $company = \App\Models\Company::find(1);
+//    $user = \Illuminate\Support\Facades\Auth::user();
+//    $user->company()->save($company);
+//
+//    dd($user->company);
 
-//    dd($user->syncRoles('candidate'));
+    $faker = \Faker\Factory::create();
+
+    dd(
+        User::find(200)->company
+    );
+
 //
     die;
 });
