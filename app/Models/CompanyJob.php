@@ -31,4 +31,16 @@ class CompanyJob extends Model
             self::PROJECT,
         ];
     }
+
+    public static function jobTypes()
+    {
+        return collect([
+            self::FULL_TIME => 'Full Time',
+            self::PART_TIME => 'Part Time',
+            self::FREELANCER => 'Freelancer',
+            self::PRACTICE => 'Practica',
+            self::VOLUNTEER => 'Voluntar',
+            self::PROJECT => 'Proiect',
+        ]);
+    }
 }

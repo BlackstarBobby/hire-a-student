@@ -8,6 +8,7 @@
             <li><a href="{{route('user.edit')}}" class="login">Editeaza profilul</a></li>
         @else
             <li><a href="{{route('companies.edit', ['company' => \Illuminate\Support\Facades\Auth::user()->company->id])}}" class="login">Editeaza profilul</a></li>
+            <li><a href="{{route('job.new')}}" class="login">Posteaza job nou</a></li>
         @endif
         <li><a href="{{route('logout')}}" class="login">Log Out</a></li>
     </ul>

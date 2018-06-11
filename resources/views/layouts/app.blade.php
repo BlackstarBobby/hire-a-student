@@ -8,6 +8,7 @@
 
     <!-- CSS -->
     <link href="/dist/css/pnotify.custom.css" rel="stylesheet">
+    {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css') !!}
     <link href="{{ mix('dist/css/app.css') }}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
@@ -194,10 +195,10 @@
 </footer>
 
 {!! Html::script('/dist/js/jquery.js') !!}
-{!! Html::script(mix('/dist/js/app.js')) !!}
 {!! Html::script('/dist/js/pnotify.custom.js') !!}
 {!! Html::script('/dist/js/ckeditor.js') !!}
-
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js') !!}
+{!! Html::script(mix('/dist/js/app.js')) !!}
 @yield('extraScripts')
 
 </body>

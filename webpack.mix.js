@@ -14,7 +14,6 @@ let mix = require('laravel-mix');
 
 /*Files to be compiled and combined in given order*/
 let jsFiles = [
-    'resources/assets/js/student.js',
     'resources/assets/js/plugins/bootstrap/js/bootstrap.min.js',
     // 'resources/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js',
     'resources/assets/js/plugins/flexslider/jquery.flexslider-min.js',
@@ -28,8 +27,11 @@ let jsFiles = [
     'resources/assets/js/theme/common.js',
     'resources/assets/js/theme/file.js',
     'resources/assets/js/ckeditor.js',
-
+    'resources/assets/js/select2.js',
+    // 'resources/assets/js/select2.full.js',
     'resources/assets/js/theme/login.tab.js',
+
+    'resources/assets/js/student.js',
 ];
 
 let compiledJsFiles = [];
@@ -74,11 +76,13 @@ let cssFiles =[
     'resources/assets/css/font-awesome/css/font-awesome.css',
     'node_modules/animate.css/animate.css',
     'resources/assets/css/themify/themify-icons.css',
+    'resources/assets/css/select2-bootstrap.css',
     // 'resources/assets/css/wysihtml5/wysihtml5.css',
     // 'resources/assets/css/editor.css',
     'resources/assets/css/style.css',
     'resources/assets/css/responsive.css',
-    // 'node_modules/pnotify/dist/PNotifyBrightTheme.css',
+    // 'resources/assets/css/select2.min.css',
+
 
     'resources/assets/css/student.css',
     'resources/assets/css/student.scss',
