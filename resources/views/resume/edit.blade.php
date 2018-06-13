@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-<?php if ($resume) dump($resume, $errors); ?>
-
 @section('content')
     <main id="maincontent">
         <section class="resume">

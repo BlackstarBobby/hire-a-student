@@ -35,6 +35,8 @@ class CompanyJobController extends Controller
 
         if ($request->ajax()) {
             dd($request->all());
+
+
         }
 
         $data['jobs'] = CompanyJob::paginate(10);
