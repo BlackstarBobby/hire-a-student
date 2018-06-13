@@ -33,7 +33,12 @@ class CompanyJobController extends Controller
     {
         $data = [];
 
+        if ($request->ajax()) {
+            dd($request->all());
+        }
+
         $data['jobs'] = CompanyJob::paginate(10);
+        $data['jobTypes'] = CompanyJob::jobTypes();
 
         return view('jobs.list.list', $data);
     }
