@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyJob;
+use App\Student\Search\Filters\Filter;
+use App\Student\Search\JobsSearch;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 /**
@@ -28,15 +31,26 @@ class CompanyJobController extends Controller
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Throwable
      */
     public function list(Request $request)
     {
         $data = [];
 
         if ($request->ajax()) {
-            dd($request->all());
+            $filters = $request->only([
+                'keywords',
+                'jobType',
+                'salary'
+            ]);
 
+            if (isset($filters['keywords'])) {
+                $filters['keywords'] = explode(' ', $filters['keywords']);
+            }
 
+            $request->merge($filters);
+            $data['jobs'] = JobsSearch::apply($request);
+            return view('jobs.list.jobs', $data)->render();
         }
 
         $data['jobs'] = CompanyJob::paginate(10);
@@ -63,16 +77,13 @@ class CompanyJobController extends Controller
      */
     public function create(Request $request)
     {
-
     }
 
     public function edit(CompanyJob $companyJob, Request $request)
     {
-
     }
 
     public function update(CompanyJob $companyJob, Request $request)
     {
-
     }
 }

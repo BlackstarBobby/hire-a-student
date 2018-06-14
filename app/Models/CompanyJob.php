@@ -17,7 +17,7 @@ class CompanyJob extends Model
 
     public function company()
     {
-        return $this->hasOne(Company::class, 'id');
+        return $this->hasOne(Company::class, 'id', 'company_id');
     }
 
     public static function getJobTypes()

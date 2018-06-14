@@ -22,7 +22,7 @@
 <div class="page_listing">
     @foreach($jobs as $job)
         <div class="sorting_content">
-            <div class="tab-image"><img src="{{$job->company->logo}}" alt=""
+            <div class="tab-image"><img src="{{$job->company->logo ?? null}}" alt=""
                                         class="img-responsive jobs-search-logo"></div>
             <div class="overflow">
                 <div class="text-shorting">

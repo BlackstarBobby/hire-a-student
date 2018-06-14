@@ -57,7 +57,7 @@
 
             let data = {
                 keywords: words,
-                jobTypes: jobTypes,
+                jobType: jobTypes,
                 salary: salary
             };
 
@@ -66,16 +66,16 @@
 
         function triggerRequest() {
             let data = gatherFilters();
-            console.log(data);
+
             $.ajax({
                 url: '/jobs',
-                method:"GET",
+                method: "GET",
                 data: data,
-                success: function (response) {
-                    
+                success: function (html) {
+                    $('.jobs-container').html(html);
                 },
                 error: function () {
-                    
+
                 }
             })
         }

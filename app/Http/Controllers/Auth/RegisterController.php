@@ -83,13 +83,11 @@ class RegisterController extends Controller
                'user_id' => $user->id,
                'resume'=> json_encode($basicStructure)
             ]);
-
-        } else if ($data['account_type'] == 'employer') {
+        } elseif ($data['account_type'] == 'employer') {
             Company::create([
                 'user_id' => $user->id,
                 'company_name' => "Placeholder" //todo change this
             ]);
-
         }
 
         return $user;
