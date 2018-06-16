@@ -12,6 +12,9 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
+    $faker = \Faker\Factory::create();
+    dd($faker->imageUrl($width = 640, $height = 480, 'abstract'));
+
     $user = \Illuminate\Support\Facades\Auth::user();
     dd($user->role);
 

@@ -28,7 +28,7 @@ class CompaniesSeeder extends Seeder
                     'company_name' => $faker->company,
                     'description' => $faker->paragraphs(50, 1),
                     'user_id' => $users[$i]->id,
-                    'logo' => '/dist/img/company-avatar.png',
+                    'logo' => $faker->imageUrl($width = 200, $height = 200, 'abstract', true, 'Faker'),
                     'phone' => $faker->phoneNumber,
                     'email' => $faker->companyEmail,
                     'website' => $faker->domainName,

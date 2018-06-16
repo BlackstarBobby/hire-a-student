@@ -19,7 +19,7 @@ class CompaniesSearch extends Search
      * @param $pageResults
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public static function apply(Request $filters, $pageResults = 10)
+    public static function apply(Request $filters, $pageResults = 15)
     {
         $query = parent::applyDecoratorFromRequest($filters, (new Company())->newQuery());
 

@@ -7,8 +7,8 @@
     <title>Job Xpress</title>
 
     <!-- CSS -->
+    {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css') !!}
     <link href="/dist/css/pnotify.custom.css" rel="stylesheet">
-    {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css') !!}
     <link href="{{ mix('dist/css/app.css') }}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
@@ -106,7 +106,7 @@
 <footer id="footer">
     <div class="container">
         <div class="row">
-            <div class="footer-block">
+            <div class="col-md-3 col-sm-12 footer-block text-center">
                 <h5>Information</h5>
                 <hr>
                 <ul class="footer-link">
@@ -118,7 +118,7 @@
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
-            <div class="footer-block">
+            <div class="col-md-3 col-sm-12 footer-block text-center">
                 <h5>For Employers</h5>
                 <hr>
                 <ul class="footer-link">
@@ -130,7 +130,7 @@
                     <li><a href="#">My Bookmarks</a></li>
                 </ul>
             </div>
-            <div class="footer-block">
+            <div class="col-md-3 col-sm-12 footer-block text-center">
                 <h5>For Jobseekers</h5>
                 <hr>
                 <ul class="footer-link">
@@ -143,7 +143,7 @@
                     <li><a href="#">Help</a></li>
                 </ul>
             </div>
-            <div class="footer-block">
+            <div class="col-md-3 col-sm-12 footer-block text-center">
                 <h5>Browse Jobs</h5>
                 <hr>
                 <ul class="footer-link">
@@ -156,24 +156,24 @@
                     <li><a href="#">Jobs by Skill</a></li>
                 </ul>
             </div>
-            <div class="footer-block footer-block2">
-                <h5>Follow Us</h5>
-                <hr>
-                <ul class="follow">
-                    <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#" title="Google"><span class="ti-google"></span></a></li>
-                    <li><a href="#" title="RSS"><i class="fa fa-rss"></i></a></li>
-                </ul>
-                <div class="border"></div>
-                <div class="register">
-                    <a href="#">8,368,480 <span>Registerd Members</span></a>
-                </div>
-                <div class="register job">
-                    <a href="#">1,50,000 <span>Latest Jobs</span></a>
-                </div>
-            </div>
+            {{--<div class="footer-block footer-block2">--}}
+                {{--<h5>Follow Us</h5>--}}
+                {{--<hr>--}}
+                {{--<ul class="follow">--}}
+                    {{--<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>--}}
+                    {{--<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>--}}
+                    {{--<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>--}}
+                    {{--<li><a href="#" title="Google"><span class="ti-google"></span></a></li>--}}
+                    {{--<li><a href="#" title="RSS"><i class="fa fa-rss"></i></a></li>--}}
+                {{--</ul>--}}
+                {{--<div class="border"></div>--}}
+                {{--<div class="register">--}}
+                    {{--<a href="#">8,368,480 <span>Registerd Members</span></a>--}}
+                {{--</div>--}}
+                {{--<div class="register job">--}}
+                    {{--<a href="#">1,50,000 <span>Latest Jobs</span></a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
     </div>
     <div class="footer-bottom">
@@ -197,7 +197,7 @@
 {!! Html::script('/dist/js/jquery.js') !!}
 {!! Html::script('/dist/js/pnotify.custom.js') !!}
 {!! Html::script('/dist/js/ckeditor.js') !!}
-{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js') !!}
 {!! Html::script(mix('/dist/js/app.js')) !!}
 @yield('extraScripts')
 

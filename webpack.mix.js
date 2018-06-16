@@ -26,6 +26,7 @@ let jsFiles = [
     // 'resources/assets/js/theme/wysihtml.js',
     'resources/assets/js/theme/common.js',
     'resources/assets/js/theme/file.js',
+    // 'resources/assets/js/robojob/robojob.js',
     'resources/assets/js/ckeditor.js',
     'resources/assets/js/select2.js',
     // 'resources/assets/js/select2.full.js',
@@ -79,9 +80,12 @@ let cssFiles =[
     'resources/assets/css/select2-bootstrap.css',
     // 'resources/assets/css/wysihtml5/wysihtml5.css',
     // 'resources/assets/css/editor.css',
+    'resources/assets/css/robojob.css',
     'resources/assets/css/style.css',
     'resources/assets/css/responsive.css',
+
     // 'resources/assets/css/select2.min.css',
+    'node_modules/select2-bootstrap-theme/src/build.scss',
 
 
     'resources/assets/css/student.css',

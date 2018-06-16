@@ -39,7 +39,7 @@ class CompaniesController extends Controller
         }
 
         $companies = Company::select(['id', 'company_name', 'logo'])
-            ->paginate(20);
+            ->paginate(15);
 
         $data['companies'] = $companies;
 
