@@ -36,3 +36,13 @@ Route::post('/jobs/update/{companyJob}', [
     'uses' => 'CompanyJobController@update'
 ]);
 
+Route::get('/jobs/administrate', [
+    'as' => 'job.administrate',
+    'uses' => 'CompanyJobController@administrate'
+]);
+
+
+Route::get('/jobs/application', [
+    'as' => 'job.application',
+    'uses' => 'CompanyJobController@application'
+]);

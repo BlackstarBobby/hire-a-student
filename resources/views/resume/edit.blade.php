@@ -69,19 +69,21 @@
                                 {{--<div class="form-group col-md-12 p-l p-r">--}}
                                 {{--<label>Description About Yourself</label>--}}
 
-                                {{--<textarea name="describe" id="describe">About me</textarea>--}}
+                                <div class="form-group">
+                                    <textarea name="describe" id="describe" class="form-control">About me</textarea>
+                                </div>
 
                                 {{--</div>--}}
                                 {{--<div class="borderfull-width"></div>--}}
-                                {{--<div class="panel-heading">Education Details</div>--}}
-                                {{--<hr>--}}
-                                {{--<div class="form-group col-md-6 p-l">--}}
-                                {{--<label>Basic / Graduation</label>--}}
-                                {{--<input type="text" class="form-control"/>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-r">--}}
-                                {{--<label>Specialization</label>--}}
-                                {{--<select class="form-control">--}}
+                                <div class="panel-heading">Education Details</div>
+                                <hr>
+                                <div class="form-group col-md-6 p-l">
+                                <label>Basic / Graduation</label>
+                                <input type="text" class="form-control"/>
+                                </div>
+                                <div class="form-group col-md-6 p-r">
+                                <label>Specialization</label>
+                                <select class="form-control">
                                 {{--<option>--- Choose a Category ---</option>--}}
                                 {{--<option>IT</option>--}}
                                 {{--<option>IT</option>--}}

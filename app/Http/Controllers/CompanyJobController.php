@@ -7,6 +7,9 @@ use App\Student\Search\Filters\Filter;
 use App\Student\Search\JobsSearch;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 /**
  * Class CompanyJobController
@@ -85,5 +88,46 @@ class CompanyJobController extends Controller
 
     public function update(CompanyJob $companyJob, Request $request)
     {
+    }
+
+    public function administrate()
+    {
+        $data = [];
+
+        $company = Auth::user()->company;
+        $data['jobs'] = CompanyJob::with('applicants')
+            ->where('company_id', $company->id)
+            ->get();
+
+        $data['jobTypes'] = CompanyJob::JobTypes();
+
+//        dd($data);
+
+        return view('jobs.administrate', $data);
+    }
+
+    public function application()
+    {
+        $data = [];
+        $data['applications'] = null;
+
+        $user = Auth::user();
+
+        if (Auth::user()->hasRole('candidate')) {
+            $data['applications'] = CompanyJob::whereHas(
+                'applicants',
+                function ($subQuery) {
+                    $subQuery->where('user_id', '=', Auth::id());
+                }
+            )->with('company')->get();
+
+            $data['jobTypes'] = CompanyJob::jobTypes();
+        } elseif (Auth::user()->hasRole('employer')) {
+            $applications = CompanyJob::where('company_id', $user->company->id)->with('applicants')->get();
+
+            $data['applications'] = $applications;
+        }
+
+        return view('jobs.applications.applications', $data);
     }
 }

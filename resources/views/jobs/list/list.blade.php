@@ -18,6 +18,11 @@
 @endsection
 
 @section('extraScripts')
+
+
+
+
+
     <script>
 
         function bindFilters() {

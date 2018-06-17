@@ -43,4 +43,12 @@ class CompanyJob extends Model
             self::PROJECT => 'Proiect',
         ]);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function applicants()
+    {
+        return $this->belongsToMany(User::class, 'company_job_user');
+    }
 }

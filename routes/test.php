@@ -12,11 +12,15 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
-    $faker = \Faker\Factory::create();
-    dd($faker->imageUrl($width = 640, $height = 480, 'abstract'));
+//    $job = \App\Models\CompanyJob::where('id', 132)->with('applicants')->first();
+//    dd($job->applicants);
+
+//    dd(\Illuminate\Support\Facades\Auth::user()->assignRole('candidate'));
+//    $faker = \Faker\Factory::create();
+//    dd($faker->imageUrl($width = 640, $height = 480, 'abstract'));
 
     $user = \Illuminate\Support\Facades\Auth::user();
-    dd($user->role);
+    dd($user->company->jobs->first()->applicants);
 
 //    $company = new \App\Models\Company();
 //    $company->company_name = 'TestCompany No.2';

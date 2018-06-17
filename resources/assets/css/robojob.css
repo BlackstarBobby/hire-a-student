@@ -13776,8 +13776,8 @@ table {
   margin-bottom: 30px;
   margin-bottom: 3rem;
   width: 100%; }
-  table thead, table tbody tr {
-    border: 1px solid #e2e2e2; }
+  /*table thead, table tbody tr {*/
+    /*border: 1px solid #e2e2e2; }*/
   table th {
     text-transform: uppercase; }
   table td, table th {

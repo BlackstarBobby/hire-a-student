@@ -20,6 +20,7 @@ class ResumeController extends Controller
     {
         $data = [];
 
+        $data['resume'] = Resume::where('user_id', Auth::id())->first();
 
         return view('resume.index', $data);
     }

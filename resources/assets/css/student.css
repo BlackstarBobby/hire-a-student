@@ -144,3 +144,12 @@ li {
     width: 75%;
     margin-left: 5%;
 }
+
+#maincontent{
+    padding-top: 0px;
+}
+
+td.work-time{
+    min-width: 100px;
+    margin: 20px 0;
+}

@@ -38,9 +38,10 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav scrollto">
                             <li><a href="{{route('landingPage.index')}}">Acasa</a></li>
+                            <li><a href="{{route('companies.list')}}">Companii</a></li>
+                            <li><a href="{{route('job.list')}}">Job-uri</a></li>
+                            <li><a href="{{route('candidates.list')}}">Candidati</a></li>
                             <li><a href="{{route('resume')}}">CV</a></li>
-                            <li><a href="{{route('companies.list')}}">Companies</a></li>
-                            <li><a href="{{route('job.list')}}">Jobs</a></li>
                             {{--<li class="dropdown">--}}
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Jobs <i--}}
                             {{--class="fa fa-angle-down"></i></a>--}}
@@ -179,16 +180,16 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 padding-left">
-                    <span>&#169; 2017 Jobxpress. All rights reserved.</span>
+                <div class="col-md-12 text-center">
+                    <span>&#169; 2018 StudentJobs. All rights reserved.</span>
                 </div>
-                <div class="col-md-6 col-sm-6 text-right padding-left">
-                    <ul class="bottom_link">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 1</a></li>
-                    </ul>
-                </div>
+                {{--<div class="col-md-6 col-sm-6 text-right padding-left">--}}
+                    {{--<ul class="bottom_link">--}}
+                        {{--<li><a href="#">Link 1</a></li>--}}
+                        {{--<li><a href="#">Link 1</a></li>--}}
+                        {{--<li><a href="#">Link 1</a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
