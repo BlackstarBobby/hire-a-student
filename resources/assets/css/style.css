@@ -33,7 +33,7 @@ a:focus, a:hover{
     position: relative;
 }
 .form-control{
-    height: 64px;
+    /*height: 64px;*/
     border: none;
     box-shadow: none;
     outline: none;
@@ -587,7 +587,7 @@ hr {
     margin-bottom: 35px;
     border: 1px solid #e1e1e1;
     width: 170px;
-    margin-left: 0;
+    /*margin-left: 0;*/
 }
 .Read_more{
     background-color: #ff8800;
@@ -639,8 +639,8 @@ hr {
     width: 100%;
 }
 .footer-block{
-    width:  17%;
-    float: left;
+    /*width:  17%;*/
+    /*float: left;*/
 }
 .footer-block2{
     width:  32%;
@@ -969,7 +969,7 @@ font-weight: 700;
 }
 .panel-body .form-control{
     border: solid 2px #e1e1e1;
-    height: 46px;
+    /*height: 46px;*/
     box-shadow: none;
     color: #333;
     font-size: 15px;

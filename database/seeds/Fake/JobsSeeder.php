@@ -30,7 +30,7 @@ class JobsSeeder extends Seeder
                     'title' => $faker->jobTitle,
                     'description' => $faker->paragraphs(20, 1),
                     'job_type' => $job_types[array_rand($job_types)],
-                    'salary' => rand(100, 10000) . '$',
+                    'salary' => rand(100, 10000) . '€',
                     'city' => 'Bucharest'
                 ]);
             }

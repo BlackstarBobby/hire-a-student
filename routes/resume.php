@@ -12,6 +12,11 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'ResumeController@index'
     ]);
 
+    Route::get('/resumes/{resume}', [
+        'as' => 'user.resume',
+        'uses' => 'ResumeController@index'
+    ]);
+
     Route::get('/resume/edit', [
         'as' => 'resume.edit',
         'uses' => 'ResumeController@edit'

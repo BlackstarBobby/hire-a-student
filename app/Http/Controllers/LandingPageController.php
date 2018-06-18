@@ -9,7 +9,7 @@ class LandingPageController extends Controller
 
     public function index(Request $request)
     {
-        return view('app.progress');
+        return view('landing_page.index');
     }
 
     public function login(Request $request)

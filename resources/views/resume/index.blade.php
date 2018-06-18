@@ -27,26 +27,26 @@
                     </div>
                     <div class="col-md-9">
                         <div class="panel-body">
-                            <div class="page-heading"><h2>Basic Information</h2>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Job Title:</strong> UI/UX Graphic Designer</span>
-                                </div>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Job Type:</strong> Full Time</span>
-                                </div>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Position:</strong>Team Leader</span>
-                                </div>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Job Category:</strong> Designer/Creative</span>
-                                </div>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Experience:</strong> 08 Years</span>
-                                </div>
-                                <div class="contact_details col-md-6 p-l">
-                                    <span><strong>Salary Package:</strong> 5.40K</span>
-                                </div>
-                            </div>
+                            {{--<div class="page-heading"><h2>Basic Information</h2>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Job Title:</strong> UI/UX Graphic Designer</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Job Type:</strong> Full Time</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Position:</strong>Team Leader</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Job Category:</strong> Designer/Creative</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Experience:</strong> 08 Years</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="contact_details col-md-6 p-l">--}}
+                                    {{--<span><strong>Salary Package:</strong> 5.40K</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="job_title">About Me:</div>
                             <div class="page-heading">

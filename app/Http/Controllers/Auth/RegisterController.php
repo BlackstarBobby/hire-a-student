@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Company;
+use App\Models\CompanyJob;
+use App\Models\Resume;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -73,6 +76,19 @@ class RegisterController extends Controller
         ]);
 
         $user->syncRoles($data['account_type']);
+
+        if ($data['account_type'] == 'candidate') {
+            $basicStructure = Resume::getBasicResumeStructure($user->first_name, $user->last_name);
+            Resume::create([
+               'user_id' => $user->id,
+               'resume'=> json_encode($basicStructure)
+            ]);
+        } elseif ($data['account_type'] == 'employer') {
+            Company::create([
+                'user_id' => $user->id,
+                'company_name' => "Placeholder" //todo change this
+            ]);
+        }
 
         return $user;
     }

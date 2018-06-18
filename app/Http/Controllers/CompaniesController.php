@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CompanyRequest;
 use App\Models\Company;
+use App\Student\Search\CompaniesSearch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -11,16 +12,36 @@ use Illuminate\Support\Facades\Storage;
 
 class CompaniesController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
+     * @throws \Throwable
+     */
     public function list(Request $request)
     {
         $data = [];
 
+        if ($request->ajax()) {
+            $filters = $request->only([
+                'companySearch',
+                'companyLetter'
+            ]);
+
+            if (isset($filters['companySearch'])) {
+                $filters['companySearch'] = explode(' ', $filters['companySearch']);
+            }
+
+            $request->merge($filters);
+            $data['companies'] = CompaniesSearch::apply($request);
+
+            http_response_code(500);
+            return view('companies.list.companies', $data)->render();
+        }
+
         $companies = Company::select(['id', 'company_name', 'logo'])
-            ->paginate(20);
+            ->paginate(15);
 
         $data['companies'] = $companies;
-
-//        dd($companies);
 
         return view('companies.list.list', $data);
     }

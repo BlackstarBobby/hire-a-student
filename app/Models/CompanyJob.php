@@ -17,7 +17,7 @@ class CompanyJob extends Model
 
     public function company()
     {
-        return $this->hasOne(Company::class, 'id');
+        return $this->hasOne(Company::class, 'id', 'company_id');
     }
 
     public static function getJobTypes()
@@ -30,5 +30,25 @@ class CompanyJob extends Model
             self::VOLUNTEER,
             self::PROJECT,
         ];
+    }
+
+    public static function jobTypes()
+    {
+        return collect([
+            self::FULL_TIME => 'Full Time',
+            self::PART_TIME => 'Part Time',
+            self::FREELANCER => 'Freelancer',
+            self::PRACTICE => 'Practica',
+            self::VOLUNTEER => 'Voluntar',
+            self::PROJECT => 'Proiect',
+        ]);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function applicants()
+    {
+        return $this->belongsToMany(User::class, 'company_job_user');
     }
 }

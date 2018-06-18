@@ -15,9 +15,24 @@ class CompaniesSeeder extends Seeder
 
         $companies = collect();
 
+        $companyUser = \App\Models\User::where('email', 'companie@demo.com')
+            ->first();
+
+        $companies->push([
+            'company_name' => $faker->company,
+            'description' => $faker->paragraphs(20, 1),
+            'user_id' => $companyUser->id,
+            'logo' => $faker->imageUrl($width = 200, $height = 200, 'abstract', true, 'Faker'),
+            'phone' => $faker->phoneNumber,
+            'email' => $faker->companyEmail,
+            'website' => $faker->domainName,
+            'location' => $faker->address,
+        ]);
+
         $numberOfCompanies = 100;
 
         $users = \App\Models\User::limit(100)
+            ->orderBy('id', 'desc')
             ->get();
 
         if ($users && $users->count() >= $numberOfCompanies) {
@@ -26,9 +41,9 @@ class CompaniesSeeder extends Seeder
 
                 $companies->push([
                     'company_name' => $faker->company,
-                    'description' => $faker->paragraphs(50, 1),
+                    'description' => $faker->paragraphs(20, 1),
                     'user_id' => $users[$i]->id,
-                    'logo' => '/dist/img/company-avatar.png',
+                    'logo' => $faker->imageUrl($width = 200, $height = 200, 'abstract', true, 'Faker'),
                     'phone' => $faker->phoneNumber,
                     'email' => $faker->companyEmail,
                     'website' => $faker->domainName,
@@ -42,6 +57,13 @@ class CompaniesSeeder extends Seeder
                 \Illuminate\Support\Facades\DB::table('companies')
                     ->insert($group->toArray());
             }
+        }
+
+        foreach ($users as $user) {
+            $user->syncRoles(['employer']);
+            $user->update([
+                'employer' => true
+            ]);
         }
     }
 }

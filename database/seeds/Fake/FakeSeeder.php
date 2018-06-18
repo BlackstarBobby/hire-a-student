@@ -19,5 +19,11 @@ class FakeSeeder extends Seeder
 
         $this->call(JobsSeeder::class);
         $this->command->info('Jobs Seeded');
+
+        $this->call(ApplicationsSeeder::class);
+        $this->command->info('Applications Seeded');
+
+        $this->call(ResumesSeeder::class);
+        $this->command->info('Resumes Seeded');
     }
 }

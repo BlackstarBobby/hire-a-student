@@ -46,3 +46,6 @@ include 'test.php';
 
 //jobs
 include 'jobs.php';
+
+//candidates
+include 'candidates.php';
