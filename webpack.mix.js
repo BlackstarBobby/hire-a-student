@@ -114,11 +114,10 @@ let otherFiles =[
     'resources/assets/css/themify/font/themify.svg',
     'resources/assets/css/themify/font/themify.ttf',
     'resources/assets/css/themify/font/themify.woff',
-    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.eot',
-    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.svg',
-    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.ttf',
-    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.woff',
-    // 'resources/assets/css/themify/font/glyphicons-halflings-regular.woff2',
+    'resources/assets/fonts/ionicons/ionicons.eot',
+    'resources/assets/fonts/ionicons/ionicons.svg',
+    'resources/assets/fonts/ionicons/ionicons.ttf',
+    'resources/assets/fonts/ionicons/ionicons.woff',
 
 ];
 
