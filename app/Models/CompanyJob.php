@@ -44,6 +44,27 @@ class CompanyJob extends Model
         ]);
     }
 
+    public function getJobTypeLabel($jobType)
+    {
+        switch ($jobType) {
+            case static::FULL_TIME:
+                return "FULL TIME";
+            case static::PART_TIME:
+                return 'Part Time';
+            case static::FREELANCER:
+                return 'FREELANCER';
+            case static::PRACTICE:
+                return 'PRACTICA';
+            case static::VOLUNTEER:
+                return 'VOLUNTARIAT';
+            case static::PROJECT:
+                return 'Proiect';
+            default:
+                return '';
+
+        }
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

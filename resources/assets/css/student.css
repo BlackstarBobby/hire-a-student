@@ -156,3 +156,10 @@ td.work-time{
 .candidates-container .tab-image > img{
     max-height: 150px;
 }
+
+.count-holder i{
+    font-size: 50px;
+}
+.job_listings .ps-container{
+    overflow-y: scroll !important;
+}

@@ -6,43 +6,46 @@
  * Time: 10:47
  */
 
-Route::get('/job/{companyJob}', [
-    'as' => 'job.index',
-    'uses' => 'CompanyJobController@index'
-]);
+Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/jobs', [
-    'as' => 'job.list',
-    'uses' => 'CompanyJobController@list'
-]);
+    Route::get('/job/{companyJob}', [
+        'as' => 'job.index',
+        'uses' => 'CompanyJobController@index'
+    ]);
 
-Route::get('/jobs/new', [
-    'as' => 'job.new',
-    'uses' => 'CompanyJobController@newJob'
-]);
+    Route::get('/jobs', [
+        'as' => 'job.list',
+        'uses' => 'CompanyJobController@list'
+    ]);
 
-Route::post('/jobs/create', [
-    'as' => 'job.create',
-    'uses' => 'CompanyJobController@create'
-]);
+    Route::get('/jobs/new', [
+        'as' => 'job.new',
+        'uses' => 'CompanyJobController@newJob'
+    ]);
 
-Route::get('/jobs/edit/{companyJob}', [
-    'as' => 'job.edit',
-    'uses' => 'CompanyJobController@edit'
-]);
+    Route::post('/jobs/create', [
+        'as' => 'job.create',
+        'uses' => 'CompanyJobController@create'
+    ]);
 
-Route::post('/jobs/update/{companyJob}', [
-    'as' => 'job.update',
-    'uses' => 'CompanyJobController@update'
-]);
+    Route::get('/jobs/edit/{companyJob}', [
+        'as' => 'job.edit',
+        'uses' => 'CompanyJobController@edit'
+    ]);
 
-Route::get('/jobs/administrate', [
-    'as' => 'job.administrate',
-    'uses' => 'CompanyJobController@administrate'
-]);
+    Route::post('/jobs/update/{companyJob}', [
+        'as' => 'job.update',
+        'uses' => 'CompanyJobController@update'
+    ]);
+
+    Route::get('/jobs/administrate', [
+        'as' => 'job.administrate',
+        'uses' => 'CompanyJobController@administrate'
+    ]);
 
 
-Route::get('/jobs/application', [
-    'as' => 'job.application',
-    'uses' => 'CompanyJobController@application'
-]);
+    Route::get('/jobs/application', [
+        'as' => 'job.application',
+        'uses' => 'CompanyJobController@application'
+    ]);
+});

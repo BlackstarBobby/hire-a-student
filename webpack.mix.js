@@ -29,6 +29,7 @@ let jsFiles = [
     // 'resources/assets/js/robojob/robojob.js',
     'resources/assets/js/ckeditor.js',
     'resources/assets/js/select2.js',
+    'resources/assets/js/counterJs.js',
     // 'resources/assets/js/select2.full.js',
     'resources/assets/js/theme/login.tab.js',
 

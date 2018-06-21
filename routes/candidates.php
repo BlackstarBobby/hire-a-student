@@ -6,7 +6,9 @@
  * Time: 13:48
  */
 
-Route::get('/candidates', [
-    'as' => 'candidates.list',
-    'uses' => 'CandidatesController@list'
-]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/candidates', [
+        'as' => 'candidates.list',
+        'uses' => 'CandidatesController@list'
+    ]);
+});

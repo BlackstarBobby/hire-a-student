@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', [
-    'as' => 'landingPage.index',
-    'uses' => 'LandingPageController@index'
-]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', [
+        'as' => 'landingPage.index',
+        'uses' => 'LandingPageController@index'
+    ]);
+});
 
 Auth::routes();
 
@@ -23,8 +25,9 @@ Route::get('/logout', function () {
     return redirect('/');
 })->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
 //landing-page
 include 'landingPage.php';

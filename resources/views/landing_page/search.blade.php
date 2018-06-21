@@ -8,18 +8,18 @@
 
                     <div class="site-tagline calltoaction-block text-center">
 
-                        <h1>JOIN US &amp; EXPLORE THOUSANDS OF JOBS</h1>
-                        <h3>JOB HUNTING HAS NEVER BEEN THIS EASY</h3>
+                        <h1>EXPLOREAZA O MULTITUDINE DE JOB-URI</h1>
+                        <h3>VANATOAREA DE JOB-URI PENTRU STUDENTI MAI SIMPLA CA NICIODATA</h3>
 
-                        <div class="c2a-btn">
-                            <div class="btn-group btn-group-lg" role="group" aria-label="Call to action">
-                                <a type="button" class="btn btn-default btn-lg"
-                                   href="https://demo.codethemes.co/robojob/find-a-job">Find a job</a>
-                                <span class="btn-circle btn-or">or</span>
-                                <a type="button" class="btn btn-primary btn-lg"
-                                   href="https://demo.codethemes.co/robojob/post-a-job">Post a job</a>
-                            </div>
-                        </div>
+                        {{--<div class="c2a-btn">--}}
+                            {{--<div class="btn-group btn-group-lg" role="group" aria-label="Call to action">--}}
+                                {{--<a type="button" class="btn btn-default btn-lg"--}}
+                                   {{--href="https://demo.codethemes.co/robojob/find-a-job">Find a job</a>--}}
+                                {{--<span class="btn-circle btn-or">or</span>--}}
+                                {{--<a type="button" class="btn btn-primary btn-lg"--}}
+                                   {{--href="https://demo.codethemes.co/robojob/post-a-job">Post a job</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                     </div>
                     <!-- End Calltoaction Block -->
@@ -31,16 +31,16 @@
                         <div class="job_listings">
 
                             <form class="job_filters" method="GET"
-                                  action="https://demo.codethemes.co/robojob/find-a-job/">
+                                  action="{{route('job.list')}}">
                                 <div class="search_jobs">
 
                                     <div class="search_keywords">
                                         <label for="search_keywords">Keywords</label>
-                                        <input type="text" id="search_keywords" name="search_keywords"
-                                               placeholder="Keywords">
+                                        <input type="text" id="search_keywords" name="keywords"
+                                               placeholder="Cauta job-uri">
                                     </div>
                                     <div class="search_submit">
-                                        <input type="submit" value="Search">
+                                        <input type="submit" value="CAUTA">
                                     </div>
 
                                 </div>

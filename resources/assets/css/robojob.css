@@ -7192,12 +7192,14 @@ Mixins
 
 .fa-spin, .load_more_jobs.loading:before,
 .load_more_s.loading:before {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear; }
+  /*-webkit-animation: fa-spin 2s infinite linear;*/
+  /*animation: fa-spin 2s infinite linear; */
+}
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
-  animation: fa-spin 1s infinite steps(8); }
+  /*-webkit-animation: fa-spin 1s infinite steps(8);*/
+  /*animation: fa-spin 1s infinite steps(8); */
+}
 
 @-webkit-keyframes fa-spin {
   0% {
@@ -15087,18 +15089,19 @@ div.job_listings .job-type {
   padding: 2rem 3rem; }
   .load_more_jobs strong,
   .load_more_s strong {
-    padding-left: 25px;
+    /*padding-left: 25px;*/
     font-weight: 600; }
   .load_more_jobs:before,
   .load_more_s:before {
-    position: absolute;
-    padding: 1px;
-    content: '\f29c';
-    background: transparent;
-    font-family: 'Ionicons';
-    line-height: 1;
-    font-size: 20px;
-    font-size: 2rem; }
+    /*position: absolute;*/
+    /*padding: 1px;*/
+    /*content: '\f29c';*/
+    /*background: transparent;*/
+    /*font-family: 'Ionicons';*/
+    /*line-height: 1;*/
+    /*font-size: 20px;*/
+    /*font-size: 2rem; */
+  }
   .load_more_jobs:focus, .load_more_jobs:hover,
   .load_more_s:focus,
   .load_more_s:hover {
