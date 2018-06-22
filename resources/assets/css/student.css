@@ -163,3 +163,10 @@ td.work-time{
 .job_listings .ps-container{
     overflow-y: scroll !important;
 }
+
+.auth-footer{
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+}
+

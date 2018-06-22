@@ -89,8 +89,8 @@ let cssFiles =[
     'node_modules/select2-bootstrap-theme/src/build.scss',
 
 
-    'resources/assets/css/student.css',
     'resources/assets/css/student.scss',
+    'resources/assets/css/student.css',
 ];
 
 // mix.sass('resources/assets/sass/app.scss', 'public/dist/css/app.css')
