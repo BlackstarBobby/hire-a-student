@@ -27,7 +27,7 @@ let jsFiles = [
     'resources/assets/js/theme/common.js',
     'resources/assets/js/theme/file.js',
     // 'resources/assets/js/robojob/robojob.js',
-    'resources/assets/js/ckeditor.js',
+    // 'resources/assets/js/ckeditor.js',
     'resources/assets/js/select2.js',
     'resources/assets/js/counterJs.js',
     // 'resources/assets/js/select2.full.js',

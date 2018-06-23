@@ -1,4 +1,4 @@
-<div class="job_title">Job Type</div>
+<div class="job_title">Tipul job-ului</div>
 <div class="borderfull-width"></div>
 <div class="page-heading">
     @if(isset($jobTypes))

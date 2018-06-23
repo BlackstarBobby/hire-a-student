@@ -1,4 +1,4 @@
-<div class="job_title">Salary</div>
+<div class="job_title">Salariu</div>
 <div class="borderfull-width"></div>
 <div class="page-heading">
     <div class="category">

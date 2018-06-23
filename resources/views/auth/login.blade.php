@@ -49,7 +49,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label> Password</label>
+                                                <label> Parola</label>
                                                 <input type="password" class="form-control" id="login_password" required
                                                        data-validation-required-message="Please enter your password"
                                                        autocomplete="off" name="password">
@@ -62,7 +62,7 @@
                                             </div>
                                             <div class="mrgn-30-top">
                                                 <button type="submit" class="btn btn-larger btn-block">
-                                                    Log in
+                                                    Autentifica
                                                 </button>
                                             </div>
                                         </form>

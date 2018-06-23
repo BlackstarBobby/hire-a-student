@@ -13,26 +13,6 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade active in" id="signup">
-                                        {{--<div class="row">--}}
-                                        {{--<div class="social_button col-md-6 col-sm-6 text-center">--}}
-                                        {{--<a href="#" class="facebook btn-block"><i--}}
-                                        {{--class="fa fa-facebook-square"></i> Login with Faceboook</a>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="social_button col-md-6 col-sm-6 text-center">--}}
-                                        {{--<a href="#" class="facebook twitter btn-block"><i--}}
-                                        {{--class="fa fa-twitter-square"></i> Login with Twiiter</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="row">--}}
-                                        {{--<div class="social_button col-md-6 col-sm-6 text-center">--}}
-                                        {{--<a href="#" class="facebook google btn-block"><i--}}
-                                        {{--class="fa fa-google-plus-square"></i> Login with Google+</a>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="social_button col-md-6 col-sm-6 text-center">--}}
-                                        {{--<a href="#" class="facebook linked btn-block"><i--}}
-                                        {{--class="fa fa-linkedin-square"></i> Login with Linked In</a>--}}
-                                        {{--</div>--}}
-                                        {{--</div>--}}
                                         <form id="signup" method="post" action="{{route('register')}}">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <div class="form-group">
@@ -105,7 +85,7 @@
                                             </div>
                                             <div class="mrgn-30-top">
                                                 <button type="submit" class="btn btn-larger btn-block">
-                                                    Sign up
+                                                    Inregistrare
                                                 </button>
                                             </div>
                                         </form>

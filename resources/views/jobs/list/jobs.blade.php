@@ -1,26 +1,26 @@
-<div class="col-md-7 col-sm-7 p-l">
+<div class="col-md-12 p-l">
     <div class="page-heading">
         <p>{{$jobs->total()}} Results</p>
     </div>
 </div>
-<div class="col-md-5 col-sm-5 filter p-r text-right">
-    <div class="col-md-7 col-sm-5"><p>Short by:</p></div>
-    <div class="col-md-5 col-sm-7 p-r">
-        <div class="dropdown">
-            <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-                Recent Jobs
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu pull-right">
-                <li><a href="#">Web Developer</a></li>
-                <li><a href="#">MySQL Developers</a></li>
-                <li><a href="#">Web Designer</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+{{--<div class="col-md-5 col-sm-5 filter p-r text-right">--}}
+{{--<div class="col-md-12"><p>Short by:</p></div>--}}
+{{--<div class="col-md-5 col-sm-7 p-r">--}}
+{{--<div class="dropdown">--}}
+{{--<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">--}}
+{{--Recent Jobs--}}
+{{--<span class="caret"></span></button>--}}
+{{--<ul class="dropdown-menu pull-right">--}}
+{{--<li><a href="#">Web Developer</a></li>--}}
+{{--<li><a href="#">MySQL Developers</a></li>--}}
+{{--<li><a href="#">Web Designer</a></li>--}}
+{{--</ul>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
 <div class="clearfix"></div>
-<div class="page_listing">
-    @foreach($jobs as $job)
+@forelse($jobs as $job)
+    <div class="page_listing">
         <div class="sorting_content">
             <div class="tab-image"><img src="{{$job->company->logo ?? null}}" alt=""
                                         class="img-responsive jobs-search-logo"></div>
@@ -73,8 +73,15 @@
                 </div>
             </div>
         </div>
-    @endforeach
-</div>
+    </div>
+@empty
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="strong" style="font-weight: 600; font-size: 24px">Nu s-au gasit job-uri</p>
+        </div>
+    </div>
+@endforelse
+
 <ul class="pagination pull-right">
     {{--<li class="active"><a href="#"><i class="fa fa-angle-left"></i></a></li>--}}
     {{--<li><a href="#">1</a></li>--}}

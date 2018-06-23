@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ResumeRequest;
 use App\Models\Resume;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,20 @@ use Illuminate\Support\Facades\Auth;
  */
 class ResumeController extends Controller
 {
+
+    public function profile(User $user, Request $request)
+    {
+        $data = [];
+
+        $data['resume'] =  Resume::with('user')
+            ->where('user_id', $user->id)
+            ->first();
+
+        //todo add escape if user does not have resume
+
+        return view('resume.index', $data);
+    }
+
     /**
      *
      */
@@ -20,7 +35,9 @@ class ResumeController extends Controller
     {
         $data = [];
 
-        $data['resume'] = Resume::where('user_id', Auth::id())->first();
+        $data['resume'] = Resume::with('user')
+            ->where('user_id', Auth::id())
+            ->first();
 
         return view('resume.index', $data);
     }

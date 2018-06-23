@@ -14,6 +14,7 @@ class CompanyJob extends Model
     const PRACTICE = 40;
     const VOLUNTEER = 50;
     const PROJECT = 60;
+    const INTERNSHIP = 70;
 
     public function company()
     {
@@ -29,6 +30,7 @@ class CompanyJob extends Model
             self::PRACTICE,
             self::VOLUNTEER,
             self::PROJECT,
+            self::INTERNSHIP
         ];
     }
 
@@ -41,6 +43,7 @@ class CompanyJob extends Model
             self::PRACTICE => 'Practica',
             self::VOLUNTEER => 'Voluntar',
             self::PROJECT => 'Proiect',
+            self::INTERNSHIP => 'Internship'
         ]);
     }
 
@@ -59,6 +62,8 @@ class CompanyJob extends Model
                 return 'VOLUNTARIAT';
             case static::PROJECT:
                 return 'Proiect';
+            case static::INTERNSHIP:
+                return 'Internship';
             default:
                 return '';
 

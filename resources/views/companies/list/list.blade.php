@@ -11,15 +11,15 @@
                             <div class="col-md-3">
                                 <div class="job-search company_search">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Company Name"
+                                        <input type="text" class="form-control" placeholder="Cauta Companii"
                                                name="search_bar">
                                         <div class="search_icon"><span class="ti-search"></span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-9">
-                                <ul class="nav nav-tabs2">
-                                    <li class="active"><a href="" class="companies-search-reset">Top</a></li>
+                                <ul class="nav nav-tabs2 ul-letters">
+                                    <li class="active"><a href="" class="companies-search-reset">Toate</a></li>
                                     <li><a class="companies-search-letter" href="">A</a></li>
                                     <li><a class="companies-search-letter" href="">B</a></li>
                                     <li><a class="companies-search-letter" href="">C</a></li>
@@ -63,12 +63,31 @@
 @section('extraScripts')
     <script>
         function bindEvents() {
+            $('.companies-search-reset').on('click', function (e) {
+                e.preventDefault();
+                let $this = $(this);
+
+                $('.ul-letters').find('li').removeClass('active');
+                $this.parent().addClass('active');
+
+                letterSearch('');
+            });
+
             $('.companies-search-letter').on('click', function (e) {
                 e.preventDefault();
-                letterSearch($(this).text());
+                let $this = $(this);
+
+                $('.ul-letters').find('li').removeClass('active');
+                $this.parent().addClass('active');
+
+                letterSearch($this.text());
             });
 
             $('input[name="search_bar"]').on('keyup', function (e) {
+                let $list = $('.ul-letters');
+                $list.find('li').removeClass('active');
+                $list.find('li').first().addClass('active');
+
                 if (typeof window.studentCompaniesSearch !== undefined) {
                     clearTimeout(window.studentCompaniesSearch);
                 }

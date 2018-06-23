@@ -42,46 +42,11 @@
                                 <li><a href="{{route('companies.list')}}">Companii</a></li>
                                 <li><a href="{{route('job.list')}}">Job-uri</a></li>
                                 <li><a href="{{route('candidates.list')}}">Candidati</a></li>
-                                <li><a href="{{route('resume')}}">CV</a></li>
+                                @if(\Illuminate\Support\Facades\Auth::user()->hasRole('candidate'))
+                                    <li><a href="{{route('resume')}}">CV</a></li>
+                                @endif
                             @endif
-                            {{--<li class="dropdown">--}}
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse Jobs <i--}}
-                            {{--class="fa fa-angle-down"></i></a>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="manage_application.html">Manage Applications</a></li>--}}
-                            {{--<li><a href="manage_job.html">Manage jobs</a></li>--}}
-                            {{--<li><a href="job_listing.html">Job Listing</a></li>--}}
-                            {{--<li><a href="job.html">Job Page</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li class="dropdown">--}}
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Employers <i--}}
-                            {{--class="fa fa-angle-down"></i></a>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="employe_detail.html">Employers Detail</a></li>--}}
-                            {{--<li><a href="employe_list.html">Employers List</a></li>--}}
-                            {{--<li><a href="post.html">Post A job</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li class="dropdown">--}}
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Candidates <i--}}
-                            {{--class="fa fa-angle-down"></i></a>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="candidates.html">Browse Candidates</a></li>--}}
-                            {{--<li><a href="resume.html">Submit Resume</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</li>--}}
-                            {{--<li class="dropdown">--}}
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i--}}
-                            {{--class="fa fa-angle-down"></i></a>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="about.html">About</a></li>--}}
-                            {{--<li><a href="resume2.html">Resume Page</a></li>--}}
-                            {{--<li><a href="faq.html">Faq</a></li>--}}
-                            {{--<li><a href="price_table.html">Pricing Tables</a></li>--}}
-                            {{--<li><a href="contact.html">Contact Us</a></li>--}}
-                            {{--</ul>--}}
-                            {{--</li>--}}
+
                         </ul>
                     </div>
                 </nav>
@@ -90,8 +55,8 @@
                 @if(\Illuminate\Support\Facades\Auth::user())
                     @include('account')
                 @else
-                    <a href="{{route('login')}}" class="login active">Login</a>
-                    <a href="{{route('register')}}" class="signup">Sign Up</a>
+                    <a href="{{route('login')}}" class="login active">Autentificare</a>
+                    <a href="{{route('register')}}" class="signup">Inregistrare</a>
                 @endif
             </div>
         </div>
@@ -106,7 +71,8 @@
 
 @include('layouts.footer')
 
-<footer id="footer" class="@if(!\Illuminate\Support\Facades\Auth::check()) auth-footer  @endif">
+<footer id="footer"
+        class=" @if(url()->current() == url('/register')) register-footer @endif  @if(!\Illuminate\Support\Facades\Auth::check() ) auth-footer  @endif">
     @if(\Illuminate\Support\Facades\Auth::check())
         <div class="container">
             <div class="row">
@@ -183,7 +149,8 @@
 
 {!! Html::script('/dist/js/jquery.js') !!}
 {!! Html::script('/dist/js/pnotify.custom.js') !!}
-{!! Html::script('/dist/js/ckeditor.js') !!}
+{{--{!! Html::script('/dist/js/ckeditor.js') !!}--}}
+{!! Html::script('https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js') !!}
 {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js') !!}
 {!! Html::script(mix('/dist/js/app.js')) !!}
 @yield('extraScripts')

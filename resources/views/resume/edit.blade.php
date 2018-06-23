@@ -245,13 +245,14 @@
     </script>
 
     <script>
-        // ClassicEditor
-        //     .create(document.querySelector('#describe'))
-        //     .then(editor => {
-        //         console.log(editor);
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //     });
+        ClassicEditor
+            .create(document.querySelector('#describe'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+        ;
     </script>
 @endsection
