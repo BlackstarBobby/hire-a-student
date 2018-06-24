@@ -234,6 +234,10 @@ td.work-time {
     align-items: center;
 }
 
+.hide-menu{
+    display: none;
+}
+
 @media only screen and (max-width: 992px) {
     .user-dropdown-container{
         z-index: 2000;
@@ -249,5 +253,6 @@ td.work-time {
     .auth-container{
         position:relative;
         top:auto;
+        width: 50%;
     }
 }

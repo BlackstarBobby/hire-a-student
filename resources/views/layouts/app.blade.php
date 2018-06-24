@@ -18,13 +18,13 @@
 <div class="header-stricky">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-xs-3">
+            <div class="col-md-3 col-xs-6">
                 <div class="site-logo">
                     <a href="{{route('landingPage.index')}}"><img src="/dist/img/home/site-logo.png" alt=""
                                                                   class="img-responsive"/></a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 top-menu-container @if(!\Illuminate\Support\Facades\Auth::user()) hide-menu @endif">
                 <nav class="navbar navbar-default navbar-static-top">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -53,7 +53,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-md-3 text-right user-dropdown-container  @if(\Illuminate\Support\Facades\Auth::user()) auth-container @endif">
+            <div class=" text-right user-dropdown-container  @if(!\Illuminate\Support\Facades\Auth::user()) auth-container col-md-9 pull-right @else col-md-3 @endif">
                 @if(\Illuminate\Support\Facades\Auth::user())
                     @include('account')
                 @else
