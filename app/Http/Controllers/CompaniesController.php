@@ -39,11 +39,23 @@ class CompaniesController extends Controller
         }
 
         $companies = Company::select(['id', 'company_name', 'logo'])
+            ->whereNotNull('company_name')
+            ->whereNotNull('description')
+            ->whereNotNull('location')
             ->paginate(15);
 
         $data['companies'] = $companies;
 
         return view('companies.list.list', $data);
+    }
+
+    public function profile(Request $request)
+    {
+        $data = [];
+
+        $data['company'] = Auth::user()->company;
+
+        return view('companies.index.index', $data);
     }
 
     public function index(Company $company, Request $request)
@@ -68,14 +80,16 @@ class CompaniesController extends Controller
     {
         $data = [];
 
+//        dd($request);
+
         $savedFile = null;
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
             $extension = $file->getClientOriginalExtension(); // getting image extension
-            $filename = $company->company_name . '.' . $extension;
+            $filename = snake_case($company->company_name) . '.' . $extension;
             $savedFile = $file->move(public_path('uploads/logos'), $filename);
             if ($savedFile) {
-                $savedFile = 'uploads/logos/' . $savedFile->getFilename();
+                $savedFile = 'uploads/logos/' . snake_case($savedFile->getFilename());
             }
         }
 
@@ -86,8 +100,8 @@ class CompaniesController extends Controller
         if ($savedFile) {
             $updateData = array_merge($request->only([
                 'company_name',
-                //'description',
-                'logo',
+                'description',
+//                'logo',
                 'phone',
                 'email',
                 'website',
@@ -100,8 +114,8 @@ class CompaniesController extends Controller
         } else {
             $updateData = $request->only([
                 'company_name',
-                //'description',
-                'logo',
+                'description',
+//                'logo',
                 'phone',
                 'email',
                 'website',
@@ -121,6 +135,7 @@ class CompaniesController extends Controller
         $data['company'] = Auth::user()->company;
 
 
-        return view('companies.index.index', $data);
+//        return view('companies.index.index', $data);
+        return redirect()->route('companies.profile');
     }
 }

@@ -19,7 +19,7 @@ class ResumeController extends Controller
     {
         $data = [];
 
-        $data['resume'] =  Resume::with('user')
+        $data['resume'] = Resume::with('user')
             ->where('user_id', $user->id)
             ->first();
 
@@ -55,6 +55,8 @@ class ResumeController extends Controller
     public function edit()
     {
         $data = [];
+
+        $data['user'] = Auth::user();
         $resume = Resume::select(['resume'])
             ->where('user_id', Auth::id())
             ->first();

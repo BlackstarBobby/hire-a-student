@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             {{--Contact information--}}
                             <div class="panel-body">
-                                <div class="panel-heading">Date de contact</div>
+                                <div class="panel-heading text-center">Date de contact</div>
                                 <hr>
 
                                 @include('resume.edit.basic')
@@ -69,21 +69,29 @@
                                 {{--<div class="form-group col-md-12 p-l p-r">--}}
                                 {{--<label>Description About Yourself</label>--}}
 
-                                <div class="form-group">
-                                    <textarea name="describe" id="describe" class="form-control">About me</textarea>
+                                <div class="panel-heading text-center">
+                                    Descrierea
                                 </div>
+                                <hr>
+                                <div class="form-group">
+                                    <textarea name="describe" id="describe" class="form-control"
+                                              placeholder="Despre mine"></textarea>
+                                </div>
+
+                                @include('resume.edit.education')
+                                @include('resume.edit.experience')
 
                                 {{--</div>--}}
                                 {{--<div class="borderfull-width"></div>--}}
-                                <div class="panel-heading">Education Details</div>
-                                <hr>
-                                <div class="form-group col-md-6 p-l">
-                                <label>Basic / Graduation</label>
-                                <input type="text" class="form-control"/>
-                                </div>
-                                <div class="form-group col-md-6 p-r">
-                                <label>Specialization</label>
-                                <select class="form-control">
+                                {{--<div class="panel-heading">Education Details</div>--}}
+                                {{--<hr>--}}
+                                {{--<div class="form-group col-md-6 p-l">--}}
+                                {{--<label>Basic / Graduation</label>--}}
+                                {{--<input type="text" class="form-control"/>--}}
+                                {{--</div>--}}
+                                {{--<div class="form-group col-md-6 p-r">--}}
+                                {{--<label>Specialization</label>--}}
+                                {{--<select class="form-control">--}}
                                 {{--<option>--- Choose a Category ---</option>--}}
                                 {{--<option>IT</option>--}}
                                 {{--<option>IT</option>--}}
@@ -254,5 +262,23 @@
                 console.error(error);
             })
         ;
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    let $imgPrev = $('#imagePreview');
+
+                    $imgPrev.css('background-image', 'url(' + e.target.result + ')');
+                    $imgPrev.hide();
+                    $imgPrev.fadeIn(650);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
     </script>
 @endsection

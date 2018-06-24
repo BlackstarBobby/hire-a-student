@@ -7,23 +7,23 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page-heading">
-                            <h2>Completeaza-ti CV-ul</h2>
-                            {{--<p class="pull-right">Ultima actualizare: </p>--}}
-                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
-                                lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum
-                                primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi
-                                consectetuer lacinia.</p>
+                            <h2>Editeaza datele companiei</h2>
+                            <p class="pull-right">Ultima actualizare: {{isset($company->updated_at) ? \Carbon\Carbon::parse($company->updated_at)->format('d-m-Y') : null}}</p>
+                            <p>*Campurile se pot lasa goale, dar daca Numele Companiei, Adresa si
+                                Descrierea nu sunt completate compania nu va aparea in rezultate
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <form action="{{route('companies.update', ['company' => $company->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('companies.update', ['company' => $company->id])}}" method="POST"
+                          enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
                             {{--Contact information--}}
                             <div class="panel-body">
-                                <div class="panel-heading">Date de contact</div>
-                                <hr>
+                                {{--<div class="panel-heading text-center">Date de contact</div>--}}
+                                {{--<hr>--}}
 
                                 <div class="row">
                                     <div class="avatar-upload">
@@ -59,6 +59,17 @@
                                         />
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                            <label for="">Descriere</label>
+                                            <textarea name="description" id="describe" class="form-control"
+                                                      placeholder="Despre mine">
+                                                {!! $company->description ?? null !!}
+                                            </textarea>
+                                    </div>
+                                </div>
+
                                 <div class="row">
 
                                     <div class="form-group col-md-6">
@@ -85,6 +96,8 @@
 
                                     <div class="form-group col-md-6">
                                         <label>Locatie Google Maps</label>
+                                        <span  data-toggle="popover" data-trigger="hover" data-placement="top"  data-html="true" data-content="Se cauta locatia dorita pe Google Maps si se urmeaza pasii: <br><br> Share -> Embed a map -> Small -> Copy HTML"><i class="fa fa-info-circle"></i>
+                                        </span>
                                         <input type="text" class="form-control" name="map"
                                                value="{{$company->map ?? null}}"
                                         />
@@ -121,12 +134,14 @@
                                     </div>
                                 </div>
 
+
+                                <div class="col-md-4 p-l">
+                                    <button type="submit" class="btn btn-default btn-block saveCv">Salveaza
+                                        modificarile
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-md-4 p-l">
-                                <button type="submit" class="btn btn-default btn-block saveCv">Salveaza
-                                    modificarile
-                                </button>
-                            </div>
+
                         </div>
                     </form>
                 </div>
@@ -139,19 +154,35 @@
 @section('extraScripts')
 
     <script>
+
+        ClassicEditor
+            .create(document.querySelector('#describe'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+        ;
+
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
                     $('#imagePreview').hide();
                     $('#imagePreview').fadeIn(650);
                 }
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#imageUpload").change(function() {
+
+        $("#imageUpload").change(function () {
             readURL(this);
+        });
+
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
         });
     </script>
 

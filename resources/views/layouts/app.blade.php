@@ -18,7 +18,7 @@
 <div class="header-stricky">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-3">
                 <div class="site-logo">
                     <a href="{{route('landingPage.index')}}"><img src="/dist/img/home/site-logo.png" alt=""
                                                                   class="img-responsive"/></a>
@@ -41,7 +41,9 @@
                                 <li><a href="{{route('landingPage.index')}}">Acasa</a></li>
                                 <li><a href="{{route('companies.list')}}">Companii</a></li>
                                 <li><a href="{{route('job.list')}}">Job-uri</a></li>
-                                <li><a href="{{route('candidates.list')}}">Candidati</a></li>
+                                @if(\Illuminate\Support\Facades\Auth::user()->hasRole('employer'))
+                                    <li><a href="{{route('candidates.list')}}">Candidati</a></li>
+                                @endif
                                 @if(\Illuminate\Support\Facades\Auth::user()->hasRole('candidate'))
                                     <li><a href="{{route('resume')}}">CV</a></li>
                                 @endif
@@ -51,7 +53,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-md-3 text-right">
+            <div class="col-md-3 text-right user-dropdown-container  @if(\Illuminate\Support\Facades\Auth::user()) auth-container @endif">
                 @if(\Illuminate\Support\Facades\Auth::user())
                     @include('account')
                 @else

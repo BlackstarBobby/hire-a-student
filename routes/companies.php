@@ -12,6 +12,11 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'CompaniesController@list'
     ]);
 
+    Route::get('/company', [
+        'as' => 'companies.profile',
+        'uses' => 'CompaniesController@profile'
+    ]);
+
     Route::get('/companies/{company}', [
         'as' => 'companies.index',
         'uses' => 'CompaniesController@index'

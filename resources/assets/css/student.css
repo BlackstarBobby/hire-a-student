@@ -4,6 +4,7 @@ li {
 
 .user-dropdown-img {
     height: 50px;
+    width: 50px;
     border-radius: 25px;
 }
 
@@ -127,6 +128,7 @@ li {
 
 .company-search-logo {
     max-height: 150px;
+    max-width: 150px;
 }
 
 .company-container {
@@ -216,4 +218,36 @@ td.work-time {
 
 .company_search{
     padding-top: 10px;
+}
+
+.resume .panel-heading{
+    padding-top: 20px;
+}
+
+.user-dropdown > .dropdown-menu{
+    left: 0;
+}
+
+.company-panel > .panel-body{
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .user-dropdown-container{
+        z-index: 2000;
+        position: absolute;
+        top:25px;
+        right: auto;
+    }
+
+    #navbar{
+        background: #fff;
+    }
+
+    .auth-container{
+        position:relative;
+        top:auto;
+    }
 }

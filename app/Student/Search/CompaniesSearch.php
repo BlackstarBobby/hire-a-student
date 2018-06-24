@@ -23,6 +23,10 @@ class CompaniesSearch extends Search
     {
         $query = parent::applyDecoratorFromRequest($filters, (new Company())->newQuery());
 
+        $query->whereNotNull('company_name')
+            ->whereNotNull('description')
+            ->whereNotNull('location');
+
         return parent::getResults($query, $pageResults);
     }
 }

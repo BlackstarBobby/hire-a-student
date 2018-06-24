@@ -48,7 +48,7 @@
                                                 @break
 
                                                 @case(\App\Models\CompanyJob::PROJECT)
-                                                <div class="work-time text-center project text-center col-md-2">Project</div>
+                                                <td class="work-time text-center project text-center">Project</td>
                                                 @break
                                             @endswitch
                                             <td><strong>{{$job->applicants->count() ?? 0}} <span class="text-success">(Manage)</span></strong></td>
