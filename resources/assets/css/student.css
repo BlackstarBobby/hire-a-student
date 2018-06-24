@@ -112,6 +112,7 @@ li {
 
 .jobs-search-logo {
     max-height: 200px;
+    max-width: 200px;
 }
 
 .navbar-default .nav > li > a {
@@ -150,7 +151,7 @@ li {
 }
 
 #maincontent {
-    padding: 0px;
+    padding: 50px;
     min-height: calc(70vw - 100px);
 }
 
@@ -173,6 +174,7 @@ td.work-time {
 
 .candidates-container .tab-image > img {
     max-height: 150px;
+    max-width: 150px;
 }
 
 .count-holder i {
@@ -255,4 +257,10 @@ td.work-time {
         top:auto;
         width: 50%;
     }
+}
+
+.jobs-container .sorting_content,
+.candidates-container .sorting_content{
+    display: flex;
+    align-items: center;
 }
