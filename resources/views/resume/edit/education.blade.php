@@ -16,7 +16,7 @@
 
                 <div class="form-group col-md-6">
                     <label>Profil / Specializare</label>
-                    <input type="text" class="form-control" name="value[education][school][institution][]"
+                    <input type="text" class="form-control" name="value[education][school][specialization][]"
                            value=""
                     />
                 </div>
@@ -43,14 +43,14 @@
                 <div class="form-group col-md-6">
                     <label>Data Admiterii</label>
                     <input type="date" class="form-control" name="value[education][school][start][]"
-                           value="{{$resume->basic->birth_date ?? null}}"
+                           value=""
                     />
                 </div>
 
                 <div class="form-group col-md-6">
                     <label>Data Absolvirii</label>
                     <input type="date" class="form-control" name="value[education][school][end][]"
-                           value="{{$resume->basic->birth_date ?? null}}"
+                           value=""
                     />
                 </div>
             </div>
@@ -70,14 +70,14 @@
     <div class="row">
         <div class="form-group col-md-6">
             <label>Numele Institutiei</label>
-            <input type="text" class="form-control" name="value[education][school][institution][]"
+            <input type="text" class="form-control" name="value[education][school_replace][institution][]"
                    value=""
             />
         </div>
 
         <div class="form-group col-md-6">
             <label>Profil / Specializare</label>
-            <input type="text" class="form-control" name="value[education][school][institution][]"
+            <input type="text" class="form-control" name="value[education][school_replace][specialization][]"
                    value=""
             />
         </div>
@@ -86,7 +86,7 @@
     <div class="row">
         <div class="form-group col-md-6">
             <label>Tipul Institutiei</label>
-            <input type="text" class="form-control" name="value[education][school][type][]"
+            <input type="text" class="form-control" name="value[education][school_replace][type][]"
                    placeholder="Facultate \ Masterat \ Doctorat"
                    value=""
             />
@@ -94,7 +94,7 @@
 
         <div class="form-group col-md-6">
             <label>Oras</label>
-            <input type="text" class="form-control" name="value[education][school][city][]"
+            <input type="text" class="form-control" name="value[education][school_replace][city][]"
                    value=""
             />
         </div>
@@ -103,14 +103,14 @@
     <div class="row">
         <div class="form-group col-md-6">
             <label>Data Admiterii</label>
-            <input type="date" class="form-control" name="value[education][school][start][]"
+            <input type="date" class="form-control" name="value[education][school_replace][start][]"
                    value=""
             />
         </div>
 
         <div class="form-group col-md-6">
             <label>Data Absolvirii</label>
-            <input type="date" class="form-control" name="value[education][school][end][]"
+            <input type="date" class="form-control" name="value[education][school_replace][end][]"
                    value=""
             />
         </div>

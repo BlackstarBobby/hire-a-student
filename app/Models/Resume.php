@@ -49,17 +49,16 @@ class Resume extends Model
             'education' => [
                 'school' => [
                     'institution' => '',
-                    'diploma' => '',
-                    'study_field' => '',
-                    'notes' => '',
-                    'description' => '',
-                    'start_year' => '',
-                    'end_year' => ''
+                    'specialization' => '',
+                    'type' => '',
+                    'city' => '',
+                    'start' => '',
+                    'end' => ''
                 ]
             ],
             'experience' => [
                 'job' => [
-                    'title' => '',
+                    'position' => '',
                     'company' => '',
                     'location' => '',
                     'description' => '',

@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="{{route('resume.update')}}" method="POST">
+                    <form action="{{route('resume.update', ['resume' => $res->id])}}" method="POST">
                         @csrf
                         <div class="col-md-12">
                             {{--Contact information--}}
@@ -74,7 +74,7 @@
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <textarea name="describe" id="describe" class="form-control"
+                                    <textarea name="value[description]" id="describe" class="form-control"
                                               placeholder="Despre mine"></textarea>
                                 </div>
 
@@ -97,19 +97,6 @@
 @endsection
 
 @section('extraScripts')
-
-    <script>
-        // $('.saveCv').on('click', function (e) {
-        //     e.preventDefault();
-        //
-        //     let data = [];
-        //
-        //     data = $('input');
-        //
-        //     console.log(data);
-        // })
-    </script>
-
     <script>
         ClassicEditor
             .create(document.querySelector('#describe'))
@@ -141,16 +128,20 @@
 
 
         $('.add-school').on('click', function () {
-            console.log('here');
             let $template = $('.school-template');
 
             if ($template.length) {
                 let $copyTemplate = $template.clone();
-                console.log('here2');
+
                 $copyTemplate.removeClass('school-template');
+
+                let $inputReplace = $copyTemplate.find("input[name*='school_replace']");
+                $inputReplace.each(function () {
+                    $(this).attr('name', $(this).attr('name').replace('school_replace', 'school'))
+                });
+
                 $('.education-container').append($copyTemplate);
             }
-
         });
     </script>
 @endsection

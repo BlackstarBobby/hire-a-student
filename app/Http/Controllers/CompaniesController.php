@@ -80,8 +80,6 @@ class CompaniesController extends Controller
     {
         $data = [];
 
-//        dd($request);
-
         $savedFile = null;
         if ($request->hasFile('logo')) {
             $file = $request->file('logo');
