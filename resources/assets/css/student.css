@@ -155,13 +155,13 @@ li {
     min-height: calc(70vw - 100px);
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {
     #maincontent {
         min-height: calc(90vw - 100px);
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     #maincontent {
         min-height: 180vw;
     }
@@ -218,49 +218,53 @@ td.work-time {
     top: 13px;
 }
 
-.company_search{
+.company_search {
     padding-top: 10px;
 }
 
-.resume .panel-heading{
+.resume .panel-heading {
     padding-top: 20px;
 }
 
-.user-dropdown > .dropdown-menu{
+.user-dropdown > .dropdown-menu {
     left: 0;
 }
 
-.company-panel > .panel-body{
+.company-panel > .panel-body {
     min-height: 200px;
     display: flex;
     align-items: center;
 }
 
-.hide-menu{
+.hide-menu {
     display: none;
 }
 
 @media only screen and (max-width: 992px) {
-    .user-dropdown-container{
+    .user-dropdown-container {
         z-index: 2000;
         position: absolute;
-        top:25px;
+        top: 25px;
         right: auto;
     }
 
-    #navbar{
+    #navbar {
         background: #fff;
     }
 
-    .auth-container{
-        position:relative;
-        top:auto;
+    .auth-container {
+        position: relative;
+        top: auto;
         width: 50%;
     }
 }
 
 .jobs-container .sorting_content,
-.candidates-container .sorting_content{
+.candidates-container .sorting_content {
     display: flex;
     align-items: center;
+}
+
+.school-template {
+    display: none;
 }
