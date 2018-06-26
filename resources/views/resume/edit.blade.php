@@ -143,5 +143,23 @@
                 $('.education-container').append($copyTemplate);
             }
         });
+
+        $('.add-experience').on('click', function () {
+            let $template = $('.job-template');
+
+            if ($template.length) {
+                let $copyTemplate = $template.clone();
+
+                $copyTemplate.removeClass('job-template');
+
+                let $inputReplace = $copyTemplate.find("input[name*='job_replace']");
+                $inputReplace.each(function () {
+                    $(this).attr('name', $(this).attr('name').replace('job_replace', 'school'))
+                });
+
+                $('.experience-container').append($copyTemplate);
+            }
+        });
+
     </script>
 @endsection

@@ -5,6 +5,9 @@
         <section class="resume2">
             <div class="container">
                 <div class="row">
+
+                    <?php $resumeDetails = json_decode($resumeume, 1)  ?>
+
                     <div class="col-md-3 author">
                         <div class="panel-body">
                             <a href="#"><img src="{{$resume->user->avatar ?? null}}" alt=""
@@ -17,8 +20,8 @@
                             <div class="contact_details">
                                 <span><i class="fa fa-envelope"></i><a
                                             href="#">{{$resume->user->email ?? null}}</a></span>
-                                <span><i class="fa fa-phone"></i>{{$resume->user->phone}}</span>
-                                <span><i class="fa fa-map-marker"></i>{{$resume->user->address}}</span>
+                                <span><i class="fa fa-phone"></i>{{$resumeDetails['basic']['phone'] ?? null}}</span>
+                                <span><i class="fa fa-map-marker"></i>{{$resumeDetails['basic']['address'] ?? null}}</span>
                             </div>
                         </div>
 
@@ -28,30 +31,10 @@
                     </div>
                     <div class="col-md-9">
                         <div class="panel-body">
-                            {{--<div class="page-heading"><h2>Basic Information</h2>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Job Title:</strong> UI/UX Graphic Designer</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Job Type:</strong> Full Time</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Position:</strong>Team Leader</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Job Category:</strong> Designer/Creative</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Experience:</strong> 08 Years</span>--}}
-                            {{--</div>--}}
-                            {{--<div class="contact_details col-md-6 p-l">--}}
-                            {{--<span><strong>Salary Package:</strong> 5.40K</span>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-                            <?php $resumeDetails = json_decode($resume->resume, 1)  ?>
+
                             <div class="job_title">Despre mine:</div>
                             <div class="page-heading">
-                                {{$resumeDetails['description'] ?? null}}
+                                {!! $resumeDetails['description'] ?? null !!}
                                 <div class="borderfull-width"></div>
                             </div>
                             <div class="page-heading">

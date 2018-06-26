@@ -265,6 +265,10 @@ td.work-time {
     align-items: center;
 }
 
-.school-template {
+.school-template, .job-template {
     display: none;
+}
+
+.experience-container .row {
+    background: #fff;
 }

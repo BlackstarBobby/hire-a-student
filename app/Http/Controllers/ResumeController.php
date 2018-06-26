@@ -64,6 +64,7 @@ class ResumeController extends Controller
         $data['res'] = $resume;
         $data['resume'] = json_decode($resume->resume ?? null);
 
+
         return view('resume.edit', $data);
     }
 
@@ -77,8 +78,6 @@ class ResumeController extends Controller
         if ($request->has('value')) {
             $resume = $request->get('value');
         }
-
-        dd($request->all());
 
         if ($resume) {
             $userResume = Auth::user()->resume;
