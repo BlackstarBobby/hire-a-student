@@ -59,10 +59,15 @@ abstract class Search
     /**
      * @param Builder $query
      * @param $pageResults
+     * @param null $pageNumber
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    protected static function getResults(Builder $query, $pageResults)
+    protected static function getResults(Builder $query, $pageResults, $pageNumber = null)
     {
-        return $query->orderByDesc('id')->paginate($pageResults);
+        if ($pageNumber) {
+            return $query->orderByDesc('id')->paginate($pageResults, ['*'], 'page', $pageNumber);
+        } else {
+            return $query->orderByDesc('id')->paginate($pageResults);
+        }
     }
 }

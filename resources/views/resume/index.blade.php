@@ -57,7 +57,7 @@
                                 <div class="borderfull-width"></div>
                             </div>
                             <div class="page-heading">
-                                <h2>Employer/Designntion</h2>
+                                <h2>Experienta</h2>
                                 <div class="contact_details">
 
                                     @if(isset($resumeDetails['experience'] ))
@@ -75,6 +75,12 @@
                                         @endforeach
                                     @endif
 
+                                </div>
+                            </div>
+                            <div class="page-heading">
+                                <h2>Abilitati</h2>
+                                <div class="contact_details">
+                                    <p>{!! $resumeDetails['abilities'] ?? null !!}</p>
                                 </div>
                             </div>
                             {{--<div class="job_title">Job Profile:</div>--}}

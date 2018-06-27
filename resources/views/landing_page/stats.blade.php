@@ -45,7 +45,7 @@
                         <h1 class="counter-js" data-from="0" data-to="{{$totalCompanies ?? 0}}" data-speed="5000" data-refresh-interval="50">{{$totalCompanies ?? 0}}</h1>
                     </div>
                     <div class="counter-info">
-                        <h4>Compani</h4>
+                        <h4>Companii</h4>
                     </div>
                 </div>
             </div>

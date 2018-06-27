@@ -69,7 +69,8 @@ class Resume extends Model
             ],
             'abilities' => [
 
-            ]
+            ],
+            'job_type' => ''
 //            ]
         ];
 

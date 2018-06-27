@@ -70,6 +70,8 @@
                 $('.ul-letters').find('li').removeClass('active');
                 $this.parent().addClass('active');
 
+                $('input[name="search_bar"]').val('');
+
                 letterSearch('');
             });
 
@@ -97,10 +99,53 @@
                 }, 1000);
 
             });
+
+            $(document).on('click', 'a.page-link', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('here');
+                let page = $(this).text();
+
+                $('.page-item').removeClass('active');
+                $(this).parent().addClass('active');
+
+
+                let search = $('input[name="search_bar"]').first().val().trim();
+                words = search.length ? search : [];
+
+                if (words) {
+                    keyWordsSearch();
+                    return;
+                }
+
+                let letter = $('.ul-letters').find('li.active > .companies-search-letter');
+
+                if (letter.length) {
+                    letterSearch(letter.text());
+                    return;
+                }
+
+                let data = {page: page};
+                triggerRequest(data);
+            });
+        }
+
+        function getPage() {
+            let pageItem = $('.page-item.active');
+            if (pageItem.length) {
+                return pageItem.text();
+            }
+            return false;
         }
 
         function letterSearch(letter) {
             let data = {companyLetter: letter};
+
+            let page = getPage();
+            if (page) {
+                data.page = page;
+            }
+
             triggerRequest(data);
         }
 
@@ -109,6 +154,12 @@
             words = search.length ? search : [];
 
             let data = {companySearch: words};
+
+            let page = getPage();
+            if (page) {
+                data.page = page;
+            }
+
             triggerRequest(data);
         }
 

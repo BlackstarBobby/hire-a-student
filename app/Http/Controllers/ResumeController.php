@@ -79,11 +79,30 @@ class ResumeController extends Controller
             $resume = $request->get('value');
         }
 
+        $savedFile = null;
+        $user = Auth::user();
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $filename = snake_case($user->first_name . '-' . $user->last_name . '' . $user->id) . '.' . $extension;
+            $savedFile = $file->move(public_path('uploads/avatars'), $filename);
+            if ($savedFile) {
+                $savedFile = 'uploads/avatars/' . snake_case($savedFile->getFilename());
+            }
+        }
+
+        if ($savedFile) {
+            $user->update([
+                'avatar' => $savedFile
+            ]);
+            $user->save();
+        }
+
         if ($resume) {
             unset($resume['education']['school_replace']);
             unset($resume['experience']['job_replace']);
 
-            $userResume = Auth::user()->resume;
+            $userResume = $user->resume;
 
             if ($userResume) {
                 $userResume->resume = json_encode($resume);

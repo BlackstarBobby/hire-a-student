@@ -17,6 +17,15 @@ class ResumesSeeder extends Seeder
             ->get();
 
         $resumes = collect();
+        $abilities = [
+            'PHP',
+            'Html',
+            'JavaScript',
+            'jQuery',
+            'CSS',
+            'MySQL',
+            'Wordpress'
+        ];
 
         foreach ($users as $user) {
             $resume = [
@@ -55,9 +64,7 @@ class ResumesSeeder extends Seeder
                         'present' => [0 => 'prezent']
                     ]
                 ],
-                'abilities' => [
-
-                ]
+                'abilities' => $abilities[array_rand($abilities)]
             ];
 
 

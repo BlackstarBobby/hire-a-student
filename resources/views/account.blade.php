@@ -9,13 +9,13 @@
                                                                     alt=""> <i class="fa fa-angle-down"></i></a>
     <ul class="dropdown-menu">
         @if(\Illuminate\Support\Facades\Auth::user()->hasRole('candidate'))
-            <li><a href="{{route('user.index')}}">Vezi Profil</a></li>
+            <li><a href="{{route('resume')}}">Vezi Profil</a></li>
         @else
             <li><a href="{{route('companies.profile')}}">Vezi Profil</a></li>
         @endif
 
         @if(\Illuminate\Support\Facades\Auth::user()->hasRole('candidate'))
-            <li><a href="{{route('user.edit')}}" class="login">Editeaza profilul</a></li>
+            <li><a href="{{route('resume.edit')}}" class="login">Editeaza profilul</a></li>
         @else
             <li>
                 <a href="{{route('companies.edit', ['company' => \Illuminate\Support\Facades\Auth::user()->company->id])}}"

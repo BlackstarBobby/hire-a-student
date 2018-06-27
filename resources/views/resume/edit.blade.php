@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form action="{{route('resume.update', ['resume' => $res->id])}}" method="POST">
+                    <form action="{{route('resume.update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">
                             {{--Contact information--}}
@@ -26,48 +26,6 @@
                                 <hr>
 
                                 @include('resume.edit.basic')
-
-
-
-                                {{--<div class="borderfull-width"></div>--}}
-                                {{--<div class="panel-heading">Basic Information</div>--}}
-                                {{--<hr>--}}
-                                {{--<div class="form-group col-md-6 p-l">--}}
-                                {{--<label>Job Title</label>--}}
-                                {{--<input type="text" class="form-control"/>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-r">--}}
-                                {{--<label>Position</label>--}}
-                                {{--<input type="text" class="form-control"/>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-l">--}}
-                                {{--<label>Years of Experience</label>--}}
-                                {{--<input type="text" class="form-control"/>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-r">--}}
-                                {{--<label>Position</label>--}}
-                                {{--<select class="form-control">--}}
-                                {{--<option>--- Choose a Category ---</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--</select>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-l">--}}
-                                {{--<label>Expected Job Category</label>--}}
-                                {{--<select class="form-control">--}}
-                                {{--<option>--- Choose a Category ---</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--<option>IT</option>--}}
-                                {{--</select>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-6 p-r">--}}
-                                {{--<label>Expected Salary Package</label>--}}
-                                {{--<input type="text" class="form-control"/>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group col-md-12 p-l p-r">--}}
-                                {{--<label>Description About Yourself</label>--}}
 
                                 <div class="panel-heading text-center">
                                     Descrierea
@@ -81,6 +39,12 @@
                                 @include('resume.edit.education')
                                 @include('resume.edit.experience')
 
+                                <div class="panel-heading text-center">
+                                    Abilitati
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="value[abilities]" value="{{$resume->abilities ?? null}}">
+                                </div>
 
                                 <div class="col-md-4 p-l">
                                     <button type="submit" class="btn btn-default btn-block saveCv">Salveaza

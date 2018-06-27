@@ -54,6 +54,10 @@
                     @case(\App\Models\CompanyJob::PROJECT)
                     <td  class="work-time text-center project text-center ">Proiect</td>
                     @break
+
+                    @case(\App\Models\CompanyJob::INTERNSHIP)
+                    <td  class="work-time text-center internship-job text-center ">Internship</td>
+                    @break
                     @endswitch
 
                     <td style="vertical-align: text-top;">In asptetare</td>

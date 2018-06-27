@@ -56,12 +56,16 @@
                         @case(\App\Models\CompanyJob::PROJECT)
                         <div class="work-time project text-center col-md-2">Project</div>
                         @break
+
+                        @case(\App\Models\CompanyJob::INTERNSHIP)
+                        <div class="work-time internship-job text-center col-md-2">Internship</div>
+                        @break
                     @endswitch
 
                 </div>
                 <div class="bottom_text">
                     <div class="contact_details col-md-4 col-sm-4">
-                                                <span><strong>Sallery: <i
+                                                <span><strong>Salariu: <i
                                                                 class="fa fa-money"></i></strong> {{$job->salary}}</span>
                     </div>
                     {{--<div class="contact_details col-md-8 col-sm-8">--}}

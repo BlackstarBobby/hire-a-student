@@ -24,7 +24,8 @@ class CompaniesController extends Controller
         if ($request->ajax()) {
             $filters = $request->only([
                 'companySearch',
-                'companyLetter'
+                'companyLetter',
+                'page'
             ]);
 
             if (isset($filters['companySearch'])) {

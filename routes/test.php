@@ -12,6 +12,8 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
+    dd(\App\Models\Resume::where('resume->job_type', '=', 20)->get());
+
     $resume =\Illuminate\Support\Facades\Auth::user()->resume;
     dd(json_decode($resume->resume));
 

@@ -42,6 +42,18 @@
                 }, 1000);
 
             });
+
+            $(document).on('click', 'a.page-link', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('here');
+                let page = $(this).text();
+
+                $('.page-item').removeClass('active');
+                $(this).parent().addClass('active');
+
+                triggerRequest();
+            });
         }
 
         function gatherFilters() {
@@ -66,7 +78,20 @@
                 salary: salary
             };
 
+            let page = getPage();
+            if (page) {
+                data.page = page;
+            }
+
             return data;
+        }
+
+        function getPage() {
+            let pageItem = $('.page-item.active');
+            if (pageItem.length) {
+                return pageItem.text();
+            }
+            return false;
         }
 
         function triggerRequest() {
