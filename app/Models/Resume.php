@@ -58,12 +58,13 @@ class Resume extends Model
             ],
             'experience' => [
                 'job' => [
+                    'institution' => '',
                     'position' => '',
-                    'company' => '',
                     'location' => '',
                     'description' => '',
-                    'start_date' => '',
-                    'end_date' => ''
+                    'start' => '',
+                    'end' => '',
+                    'present' => ''
                 ]
             ],
             'abilities' => [

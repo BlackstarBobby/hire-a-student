@@ -33,22 +33,22 @@ class ResumesSeeder extends Seeder
                 'education' => [
                     'school' => [
                         'institution' => 'Facultatea de Matematica si Informatica, Universitatea din Bucuresti',
-                        'diploma' => 'Diploma de licenta',
-                        'study_field' => 'Computer Science',
-                        'notes' => '',
+                        'type' => 'Diploma de licenta',
+                        'specialization' => 'Computer Science',
                         'description' => '',
-                        'start_year' => '2015',
-                        'end_year' => '2018'
+                        'start' => '2015',
+                        'end' => '2018'
                     ]
                 ],
                 'experience' => [
                     'job' => [
-                        'title' => 'Software Engineer',
-                        'company' => $faker->company,
+                        'position' => 'Software Engineer',
+                        'institution' => $faker->company,
                         'location' => $faker->streetAddress,
                         'description' => 'Dezvoltare aplicatii software',
-                        'start_date' => '2016',
-                        'end_date' => 'prezent'
+                        'start' => '2016',
+                        'end' => '',
+                        'present' => 'prezent'
                     ]
                 ],
                 'abilities' => [
