@@ -32,23 +32,27 @@ class ResumesSeeder extends Seeder
                 'description' => $faker->paragraphs(20, 1),
                 'education' => [
                     'school' => [
-                        'institution' => 'Facultatea de Matematica si Informatica, Universitatea din Bucuresti',
-                        'type' => 'Diploma de licenta',
-                        'specialization' => 'Computer Science',
-                        'description' => '',
-                        'start' => '2015',
-                        'end' => '2018'
+                        'institution' => [
+                            0 => 'Facultatea de Matematica si Informatica, Universitatea din Bucuresti'
+                        ],
+                        'type' => [
+                            0 => 'Diploma de licenta'
+                        ],
+                        'specialization' => [0 => 'Computer Science'],
+                        'description' => [0 => ""],
+                        'start' => [0 => '2015'],
+                        'end' => [0 => '2018']
                     ]
                 ],
                 'experience' => [
                     'job' => [
-                        'position' => 'Software Engineer',
-                        'institution' => $faker->company,
-                        'location' => $faker->streetAddress,
-                        'description' => 'Dezvoltare aplicatii software',
-                        'start' => '2016',
-                        'end' => '',
-                        'present' => 'prezent'
+                        'position' => [0 => 'Software Engineer'],
+                        'institution' => [0 => $faker->company],
+                        'location' => [0 => $faker->streetAddress],
+                        'description' => [0 => 'Dezvoltare aplicatii software'],
+                        'start' => [0 => '2016'],
+                        'end' => [0 => ''],
+                        'present' => [0 => 'prezent']
                     ]
                 ],
                 'abilities' => [
