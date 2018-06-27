@@ -47,7 +47,7 @@
                                             <span>{{$school['specialization'][$index] ?? null}}</span>
                                             <span>{{$school['type'][$index] ?? null}}</span>
                                             <span>{{$school['city'][$index] ?? null}}</span>
-                                            <span>{{$school['start'][$index] ?? null . ' - ' . $school['end'][$index] ?? null}}</span>
+                                            <span>{{($school['start'][$index] ?? null) . ' - ' . ($school['end'][$index] ?? null)}}</span>
                                         </div>
 
                                         <?php $index = $index + 1; ?>
