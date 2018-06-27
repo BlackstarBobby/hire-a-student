@@ -43,30 +43,17 @@
                                     <?php $index = 0; ?>
                                     @foreach($resumeDetails['education'] as $key => $school)
                                         <div class="contact_details col-md-12">
-                                            <span>{{$school['institution'][$index]}}</span>
-                                            <span>{{$school['specialization'][$index]}}</span>
-                                            <span>{{$school['type'][$index]}}</span>
-                                            <span>{{$school['city'][$index]}}</span>
-                                            <span>{{$school['start'][$index] . ' - ' . $school['end'][$index]}}</span>
+                                            <span>{{$school['institution'][$index] ?? null}}</span>
+                                            <span>{{$school['specialization'][$index] ?? null}}</span>
+                                            <span>{{$school['type'][$index] ?? null}}</span>
+                                            <span>{{$school['city'][$index] ?? null}}</span>
+                                            <span>{{$school['start'][$index] ?? null . ' - ' . $school['end'][$index] ?? null}}</span>
                                         </div>
 
                                         <?php $index = $index + 1; ?>
                                     @endforeach
                                 @endif
 
-
-                                {{--<div class="contact_details col-md-6 p-l">--}}
-                                {{--<span><strong>New York Academy of Art</strong></span>--}}
-                                {{--<span>UI/UX Graphic Designer</span>--}}
-                                {{--<span>2008 - 2010</span>--}}
-                                {{--<span>B Grade</span>--}}
-                                {{--</div>--}}
-                                {{--<div class="contact_details col-md-6 p-l">--}}
-                                {{--<span><strong>Graphic Design Institute, Canada</strong></span>--}}
-                                {{--<span>UI/UX Graphic Designer</span>--}}
-                                {{--<span>2008 - 2010</span>--}}
-                                {{--<span>57%</span>--}}
-                                {{--</div>--}}
                                 <div class="borderfull-width"></div>
                             </div>
                             <div class="page-heading">
@@ -77,11 +64,11 @@
                                         <?php $index = 0; ?>
                                         @foreach($resumeDetails['experience'] as $key => $job)
                                             <div class="contact_details col-md-12">
-                                                <span>{{$job['institution'][$index]}}</span>
-                                                <span>{{$job['position'][$index]}}</span>
-                                                <span>{{$job['location'][$index]}}</span>
-                                                <span>{!! $job['description'][$index] !!}</span>
-                                                <span>{{$job['start'][$index] . ' - ' . (($job['end'][$index] ?? $job['present'][$index]) ?? null)}}</span>
+                                                <span>{{$job['institution'][$index] ?? null}}</span>
+                                                <span>{{$job['position'][$index] ?? null}}</span>
+                                                <span>{{$job['location'][$index] ?? null}}</span>
+                                                <span>{!! $job['description'][$index] ?? null !!}</span>
+                                                <span>{{$job['start'][$index] ?? null . ' - ' . (($job['end'][$index] ?? $job['present'][$index]) ?? null)}}</span>
                                             </div>
 
                                             <?php $index = $index + 1; ?>
