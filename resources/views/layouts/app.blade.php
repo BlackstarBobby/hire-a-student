@@ -8,6 +8,10 @@
 
     <!-- CSS -->
     {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css') !!}
+{{--    {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css') !!}--}}
+    <link href="/dist/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/dist/css/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="/dist/css/jquery-ui.theme.min.css" rel="stylesheet">
     <link href="/dist/css/pnotify.custom.css" rel="stylesheet">
     <link href="{{ mix('dist/css/app.css') }}" rel="stylesheet">
 
@@ -150,6 +154,7 @@
 </footer>
 
 {!! Html::script('/dist/js/jquery.js') !!}
+{!! Html::script('/dist/js/jquery-ui.min.js') !!}
 {!! Html::script('/dist/js/pnotify.custom.js') !!}
 {{--{!! Html::script('/dist/js/ckeditor.js') !!}--}}
 {!! Html::script('https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js') !!}

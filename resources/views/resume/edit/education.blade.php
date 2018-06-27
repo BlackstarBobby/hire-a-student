@@ -4,21 +4,21 @@
 <hr>
 <div class="education-container">
     @if(isset($resume->education ))
-        @foreach($resume->education as $school)
-
+        <?php $index = 0; ?>
+        @foreach($resume->education as $key => $school)
             <div class="school">
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label>Numele Institutiei</label>
                         <input type="text" class="form-control" name="value[education][school][institution][]"
-                               value=""
+                               value="{{$school->institution[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Profil / Specializare</label>
                         <input type="text" class="form-control" name="value[education][school][specialization][]"
-                               value=""
+                               value="{{$school->specialization[$index]  ?? null}}"
                         />
                     </div>
                 </div>
@@ -28,14 +28,14 @@
                         <label>Tipul Institutiei</label>
                         <input type="text" class="form-control" name="value[education][school][type][]"
                                placeholder="Facultate \ Masterat \ Doctorat"
-                               value=""
+                               value="{{$school->type[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Oras</label>
                         <input type="text" class="form-control" name="value[education][school][city][]"
-                               value=""
+                               value="{{$school->city[$index] ?? null}}"
                         />
                     </div>
                 </div>
@@ -43,19 +43,20 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label>Data Admiterii</label>
-                        <input type="date" class="form-control" name="value[education][school][start][]"
-                               value=""
+                        <input type="text" class="form-control datepicker" name="value[education][school][start][]"
+                               value="{{$school->start[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Data Absolvirii</label>
-                        <input type="date" class="form-control" name="value[education][school][end][]"
-                               value=""
+                        <input type="text" class="form-control datepicker" name="value[education][school][end][]"
+                               value="{{$school->end[$index] ?? null}}"
                         />
                     </div>
                 </div>
             </div>
+            <?php $index = $index + 1; ?>
         @endforeach
     @endif
 </div>

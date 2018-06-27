@@ -80,6 +80,9 @@ class ResumeController extends Controller
         }
 
         if ($resume) {
+            unset($resume['education']['school_replace']);
+            unset($resume['experience']['job_replace']);
+
             $userResume = Auth::user()->resume;
 
             if ($userResume) {

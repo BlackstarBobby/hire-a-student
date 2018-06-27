@@ -273,6 +273,22 @@ td.work-time {
     background: #fff;
 }
 
-.add-experience, .add-school{
+.add-experience, .add-school {
     margin: 0 10px;
+}
+
+.ui-datepicker-calendar {
+    display: none;
+}
+
+.ui-datepicker-month {
+    display: none;
+}
+
+.ui-datepicker-next, .ui-datepicker-prev {
+    display: none;
+}
+
+.ui-datepicker-year {
+    width: 100%;
 }

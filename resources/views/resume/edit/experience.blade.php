@@ -4,6 +4,7 @@
 <hr>
 <div class="experience-container">
     @if(isset($resume->experience))
+        <?php $index = 0; ?>
         @foreach($resume->experience as $exp)
 
             <div class="job">
@@ -11,14 +12,14 @@
                     <div class="form-group col-md-6">
                         <label>Numele Companiei</label>
                         <input type="text" class="form-control" name="value[experience][job][institution][]"
-                               value=""
+                               value="{{$exp->institution[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Functia ocupata</label>
                         <input type="text" class="form-control" name="value[experience][job][position][]"
-                               value=""
+                               value="{{$exp->position[$index] ?? null}}"
                         />
                     </div>
                 </div>
@@ -28,7 +29,7 @@
                         <label>Oras</label>
                         <input type="text" class="form-control" name="value[experience][job][location][]"
                                placeholder=""
-                               value=""
+                               value="{{$exp->location[$index] ?? null}}"
                         />
                     </div>
 
@@ -43,7 +44,7 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <textarea name="value[experience][job][description][]" id="" cols="30" rows="5"
-                                  placeholder="Descrierea job-ului"></textarea>
+                                  placeholder="Descrierea job-ului">{!! trim($exp->description[$index] ?? null) !!}</textarea>
                     </div>
                 </div>
 
@@ -51,24 +52,24 @@
                     <div class="form-group col-md-5">
                         <label>De la</label>
                         <input type="date" class="form-control" name="value[experience][job][start][]"
-                               value=""
+                               value="{{$exp->start[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-5">
                         <label>Pana la</label>
                         <input type="date" class="form-control" name="value[experience][job][end][]"
-                               value=""
+                               value="{{$exp->end[$index] ?? null}}"
                         />
                     </div>
 
                     <div class="form-group col-md-2">
                         <label style="display: block">Prezent</label>
-                        <input type="checkbox" value="present">
+                        <input type="checkbox" value="present" name="value[experience][job][present][]"
+                               checked="@if(isset(($exp->institution[$index]))) true @else false @endif">
                     </div>
                 </div>
-            </div>
-
+            </div><?php $index = $index + 1; ?>
         @endforeach
     @endif
 </div>

@@ -12,7 +12,8 @@ use Spatie\Permission\Models\Role;
 
 Route::get('/test', function () {
 
-    dd(\Illuminate\Support\Facades\Auth::user()->resume);
+    $resume =\Illuminate\Support\Facades\Auth::user()->resume;
+    dd(json_decode($resume->resume));
 
 //    $job = \App\Models\CompanyJob::where('id', 132)->with('applicants')->first();
 //    dd($job->applicants);

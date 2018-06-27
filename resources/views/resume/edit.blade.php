@@ -75,7 +75,7 @@
                                 <hr>
                                 <div class="form-group">
                                     <textarea name="value[description]" id="describe" class="form-control"
-                                              placeholder="Despre mine"></textarea>
+                                              placeholder="Despre mine">{!! $resume->description !!}</textarea>
                                 </div>
 
                                 @include('resume.edit.education')
@@ -98,6 +98,21 @@
 
 @section('extraScripts')
     <script>
+        $(function() {
+            $('.datepicker').datepicker({
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'yy',
+                onClose: function(dateText, inst) {
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, 1));
+                }
+            });
+            $(".date-picker-year").focus(function () {
+                $(".ui-datepicker-month").hide();
+            });
+        });
+
         ClassicEditor
             .create(document.querySelector('#describe'))
             .then(editor => {
