@@ -144,6 +144,11 @@
             }
         });
 
+        $('.delete-school').on('click', function () {
+            $('.education-container').children().last().remove();
+        });
+
+
         $('.add-experience').on('click', function () {
             let $template = $('.job-template');
 
@@ -159,6 +164,10 @@
 
                 $('.experience-container').append($copyTemplate);
             }
+        });
+
+        $('.delete-experience').on('click', function () {
+            $('.experience-container').children().last().remove();
         });
 
     </script>

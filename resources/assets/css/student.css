@@ -272,3 +272,7 @@ td.work-time {
 .experience-container .row {
     background: #fff;
 }
+
+.add-experience, .add-school{
+    margin: 0 10px;
+}

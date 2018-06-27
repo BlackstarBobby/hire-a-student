@@ -2,66 +2,67 @@
     Educatie
 </div>
 <hr>
+<div class="education-container">
+    @if(isset($resume->education ))
+        @foreach($resume->education as $school)
 
-@foreach($resume->education as $school)
-    <div class="education-container">
-        <div class="school">
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Numele Institutiei</label>
-                    <input type="text" class="form-control" name="value[education][school][institution][]"
-                           value=""
-                    />
+            <div class="school">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Numele Institutiei</label>
+                        <input type="text" class="form-control" name="value[education][school][institution][]"
+                               value=""
+                        />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Profil / Specializare</label>
+                        <input type="text" class="form-control" name="value[education][school][specialization][]"
+                               value=""
+                        />
+                    </div>
                 </div>
 
-                <div class="form-group col-md-6">
-                    <label>Profil / Specializare</label>
-                    <input type="text" class="form-control" name="value[education][school][specialization][]"
-                           value=""
-                    />
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Tipul Institutiei</label>
+                        <input type="text" class="form-control" name="value[education][school][type][]"
+                               placeholder="Facultate \ Masterat \ Doctorat"
+                               value=""
+                        />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Oras</label>
+                        <input type="text" class="form-control" name="value[education][school][city][]"
+                               value=""
+                        />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Data Admiterii</label>
+                        <input type="date" class="form-control" name="value[education][school][start][]"
+                               value=""
+                        />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Data Absolvirii</label>
+                        <input type="date" class="form-control" name="value[education][school][end][]"
+                               value=""
+                        />
+                    </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Tipul Institutiei</label>
-                    <input type="text" class="form-control" name="value[education][school][type][]"
-                           placeholder="Facultate \ Masterat \ Doctorat"
-                           value=""
-                    />
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label>Oras</label>
-                    <input type="text" class="form-control" name="value[education][school][city][]"
-                           value=""
-                    />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Data Admiterii</label>
-                    <input type="date" class="form-control" name="value[education][school][start][]"
-                           value=""
-                    />
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label>Data Absolvirii</label>
-                    <input type="date" class="form-control" name="value[education][school][end][]"
-                           value=""
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
-
-@endforeach
-
+        @endforeach
+    @endif
+</div>
 <div class="row">
     <div class="col-md-12">
-        <a class="btn btn-default pull-right add-school">Adauga</a>
+        <a class="btn btn-warning pull-right delete-school">Sterge</a>
+        <a class="btn btn-success pull-right add-school">Adauga</a>
     </div>
 </div>
 
