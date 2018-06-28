@@ -48,4 +48,19 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'job.application',
         'uses' => 'CompanyJobController@application'
     ]);
+
+    Route::get('/jobs/applicate/{companyJob}', [
+        'as' => 'job.applicate',
+        'uses' => 'CompanyJobController@applicate'
+    ]);
+
+    Route::get('/jobs/delete/{companyJob}', [
+        'as' => 'job.delete',
+        'uses' => 'CompanyJobController@delete'
+    ]);
+
+    Route::get('/jobs/delete/application/{companyJob}/{user}', [
+        'as' => 'job.delete.application',
+        'uses' => 'CompanyJobController@deleteApplication'
+    ]);
 });

@@ -1,10 +1,10 @@
 <table class="table">
     <thead class="">
     <tr>
-        <th>Candidate Name</th>
-        <th>Job Title</th>
-        <th>Resume</th>
-        <th>Action</th>
+        <th>Numele Candidatului</th>
+        <th>Titlul Job-ului</th>
+        <th>CV</th>
+        <th>Actiune</th>
     </tr>
     </thead>
     <tbody>
@@ -29,10 +29,15 @@
                     </td>
                     <td style="vertical-align: text-top;"><h1>{{$job->title}} </h1>
                     </td>
-                    <td style="vertical-align: text-top;"><a href="{{route('resume')}}"><i class="fa fa-file-pdf-o"></i>
+                    <td style="vertical-align: text-top;"><a
+                                href="{{route('user.resume', ['user' => $candidate->id])}}">
                             {{"CV " . $candidate->last_name}}</a></td>
-                    <td style="vertical-align: text-top;"><span><i class="fa fa-check"></i></span>
-                        <span><i class="fa fa-trash"></i></span></td>
+                    <td style="vertical-align: text-top;">
+                        {{--<span><i class="fa fa-check"></i></span>--}}
+                        <a href="{{route('job.delete.application', ['companyJob' => $job->id, 'user' => $candidate->id])}}">
+                            <span><i class="fa fa-trash"></i></span>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         @endforeach

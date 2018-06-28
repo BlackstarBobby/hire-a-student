@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Job Xpress</title>
+    <title>Student Jobs</title>
 
     <!-- CSS -->
     {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css') !!}
@@ -24,11 +24,11 @@
         <div class="row">
             <div class="col-md-3 col-xs-6">
                 <div class="site-logo">
-                    <a href="{{route('landingPage.index')}}"><img src="/dist/img/home/site-logo.png" alt=""
+                    <a href="{{url('/')}}"><img src="/dist/img/home/site-logo.png" alt=""
                                                                   class="img-responsive"/></a>
                 </div>
             </div>
-            <div class="col-md-6 top-menu-container @if(!\Illuminate\Support\Facades\Auth::user()) hide-menu @endif">
+            <div class="col-md-6 top-menu-container @if(!\Illuminate\Support\Facades\Auth::user()) hide-menu @else col-xs-4 @endif">
                 <nav class="navbar navbar-default navbar-static-top">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -57,7 +57,7 @@
                     </div>
                 </nav>
             </div>
-            <div class=" text-right user-dropdown-container  @if(!\Illuminate\Support\Facades\Auth::user()) auth-container col-md-9 pull-right @else col-md-3 @endif">
+            <div class=" text-right user-dropdown-container  @if(!\Illuminate\Support\Facades\Auth::user()) auth-container col-md-9 pull-right @else col-md-2 logged-in @endif">
                 @if(\Illuminate\Support\Facades\Auth::user())
                     @include('account')
                 @else

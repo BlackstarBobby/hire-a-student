@@ -8,11 +8,6 @@
                     <div class="col-md-12">
                         <div class="page-heading">
                             <h2>Completeaza-ti CV-ul</h2>
-                            {{--<p class="pull-right">Ultima actualizare: </p>--}}
-                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan
-                                lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum
-                                primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi
-                                consectetuer lacinia.</p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +37,18 @@
                                 <div class="panel-heading text-center">
                                     Abilitati
                                 </div>
+                                <hr>
                                 <div class="form-group">
                                     <input type="text" name="value[abilities]" value="{{$resume->abilities ?? null}}">
+                                </div>
+
+                                <div class="panel-heading text-center">
+                                    Preferinte
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="">Tipul de job cautat</label>
+                                    {!! Form::select('value[job_type]', $jobTypes, $resume->job_type ?? null, ['class' => 'form-control select2', 'placeholder'=>'Selecteaza tipul de job']) !!}
                                 </div>
 
                                 <div class="col-md-4 p-l">
@@ -62,12 +67,12 @@
 
 @section('extraScripts')
     <script>
-        $(function() {
+        $(function () {
             $('.datepicker').datepicker({
                 changeYear: true,
                 showButtonPanel: true,
                 dateFormat: 'yy',
-                onClose: function(dateText, inst) {
+                onClose: function (dateText, inst) {
                     var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
                     $(this).datepicker('setDate', new Date(year, 1));
                 }
@@ -147,6 +152,10 @@
 
         $('.delete-experience').on('click', function () {
             $('.experience-container').children().last().remove();
+        });
+
+        $('.select2').select2({
+            theme: 'bootstrap'
         });
 
     </script>

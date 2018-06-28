@@ -13,7 +13,7 @@ li {
     border: none;
     border-radius: 0px;
     left: 50px;
-    right: 0;
+    /*right: 0;*/
     padding: 10px 0 0 0;
     box-shadow: none;
 }
@@ -159,11 +159,24 @@ li {
     #maincontent {
         min-height: calc(90vw - 100px);
     }
+
+    .navbar-toggle {
+        margin-top: 15px !important;
+    }
+
+    .logged-in {
+        position: relative !important;
+        top: auto !important;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     #maincontent {
         min-height: 180vw;
+    }
+
+    .user-dropdown > .dropdown-menu {
+        right: auto;
     }
 }
 
@@ -290,9 +303,9 @@ td.work-time {
 }
 
 .ui-datepicker-year {
-    width: 100%;
+    width: 100% !important;
 }
 
-.internship-job{
+.internship-job {
     background: #d9534f;
 }

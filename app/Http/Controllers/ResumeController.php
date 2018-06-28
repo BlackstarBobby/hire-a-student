@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ResumeRequest;
+use App\Models\CompanyJob;
 use App\Models\Resume;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -63,7 +64,7 @@ class ResumeController extends Controller
 
         $data['res'] = $resume;
         $data['resume'] = json_decode($resume->resume ?? null);
-
+        $data['jobTypes'] = CompanyJob::jobTypes();
 
         return view('resume.edit', $data);
     }

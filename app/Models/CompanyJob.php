@@ -75,6 +75,6 @@ class CompanyJob extends Model
      */
     public function applicants()
     {
-        return $this->belongsToMany(User::class, 'company_job_user');
+        return $this->belongsToMany(User::class, 'company_job_user', 'user_id', 'company_job_id');
     }
 }

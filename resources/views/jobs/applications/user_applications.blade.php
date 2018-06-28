@@ -4,7 +4,6 @@
         <th>Nume Companie</th>
         <th>Titlu Job</th>
         <th>Tipul Jobului</th>
-        <th>Raspuns</th>
     </tr>
     </thead>
     <tbody>
@@ -19,7 +18,9 @@
                                 class="img-responsive" width="70" height="70"></div>
                     <div class="overflow col-md-8 col-sm-8 p-l">
                         <div class="text-shorting">
-                            <h1>{{$job->company->company_name}} </h1>
+                            <h1>
+                                <a href="{{route('companies.index',['company' => $job->company->id])}}">{{$job->company->company_name}} </a>
+                            </h1>
                             <p></p>
                         </div>
                     </div>
@@ -52,15 +53,14 @@
                     @break
 
                     @case(\App\Models\CompanyJob::PROJECT)
-                    <td  class="work-time text-center project text-center ">Proiect</td>
+                    <td class="work-time text-center project text-center ">Proiect</td>
                     @break
 
                     @case(\App\Models\CompanyJob::INTERNSHIP)
-                    <td  class="work-time text-center internship-job text-center ">Internship</td>
+                    <td class="work-time text-center internship-job text-center ">Internship</td>
                     @break
-                    @endswitch
+                @endswitch
 
-                    <td style="vertical-align: text-top;">In asptetare</td>
             </tr>
             {{--@endforeach--}}
         @endforeach

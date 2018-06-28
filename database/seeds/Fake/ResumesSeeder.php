@@ -27,6 +27,8 @@ class ResumesSeeder extends Seeder
             'Wordpress'
         ];
 
+        $jobTypes = \App\Models\CompanyJob::getJobTypes();
+
         foreach ($users as $user) {
             $resume = [
 
@@ -64,7 +66,8 @@ class ResumesSeeder extends Seeder
                         'present' => [0 => 'prezent']
                     ]
                 ],
-                'abilities' => $abilities[array_rand($abilities)]
+                'abilities' => $abilities[array_rand($abilities)],
+                'job_type' => $jobTypes[array_rand($jobTypes)]
             ];
 
 

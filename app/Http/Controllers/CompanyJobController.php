@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyJob;
+use App\Models\User;
 use App\Student\Search\Filters\Filter;
 use App\Student\Search\JobsSearch;
 use Illuminate\Http\JsonResponse;
@@ -129,5 +130,30 @@ class CompanyJobController extends Controller
         }
 
         return view('jobs.applications.applications', $data);
+    }
+
+    public function applicate(CompanyJob $companyJob, Request $request)
+    {
+        $job = CompanyJob::find($companyJob->id);
+
+        $job->applicants()->save(Auth::user());
+
+        return redirect()->route('job.application');
+    }
+
+    public function delete(CompanyJob $companyJob)
+    {
+        CompanyJob::destroy([$companyJob->id]);
+
+        return redirect()->back();
+    }
+
+    public function deleteApplication(CompanyJob $companyJob, User $user)
+    {
+        $job = CompanyJob::find($companyJob->id);
+
+        $job->applicants()->detach($user->id);
+
+        return redirect()->back();
     }
 }
