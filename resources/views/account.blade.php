@@ -3,7 +3,7 @@
                             @if(\Illuminate\Support\Facades\Auth::user()->hasRole('candidate'))
                             src="{{url(\Illuminate\Support\Facades\Auth::user()->avatar)}}"
                             @else
-                            src="{{url(\Illuminate\Support\Facades\Auth::user()->company->logo)}}"
+                            src="{{url(\Illuminate\Support\Facades\Auth::user()->company->logo ?? '')}}"
                             @endif
 
                                                                     alt=""> <i class="fa fa-angle-down"></i></a>
