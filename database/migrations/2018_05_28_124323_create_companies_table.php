@@ -22,8 +22,8 @@ class CreateCompaniesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('company_name');
             $table->text('description')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('phone')->default('/dist/img/company-avatar.png');
+            $table->string('logo')->nullable()->default('/dist/img/company-avatar.png');
+            $table->string('phone');
             $table->string('email')->nullable();
             $table->string('website')->nullable();
             $table->string('facebook')->nullable();

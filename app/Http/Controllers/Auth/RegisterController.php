@@ -86,7 +86,7 @@ class RegisterController extends Controller
         } elseif ($data['account_type'] == 'employer') {
             Company::create([
                 'user_id' => $user->id,
-                'company_name' => "Placeholder" //todo change this
+//                'company_name' => "Placeholder" //todo change this
             ]);
         }
 
