@@ -199,7 +199,7 @@ td.work-time {
 }
 
 .auth-footer {
-    position: absolute !important;
+    /*position: absolute !important;*/
     bottom: 0;
     padding: 0 !important;
     background: none !important;
