@@ -1,44 +1,72 @@
-FROM php:7.2-fpm-alpine3.8
+FROM php:7.2-fpm
 
-# Xdebug extension
-#RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \
-#    && pecl install xdebug \
-#    && docker-php-ext-enable xdebug \
-#    && apk del pcre-dev ${PHPIZE_DEPS}
+# Copy composer.lock and composer.json
+COPY composer.lock composer.json /var/www/
 
-#RUN set -ex \
-##   Mysql PDO
-#    && docker-php-ext-configure pdo_mysql --with-pdo-mysql \
-#    && docker-php-ext-install pdo_mysql \
-##    Postgres PDO
-#    && apk --no-cache add postgresql-dev \
-#    && docker-php-ext-configure pdo_pgsql --with-pgsql \
-#    && docker-php-ext-install pdo_pgsql \
-##   Opcache
-#    && docker-php-ext-configure opcache --enable-opcache \
-#    && docker-php-ext-install opcache \
-##   Bcmath
-#    && docker-php-ext-configure bcmath --enable-bcmath \
-#    && docker-php-ext-install bcmath \
-##   Clean apk
-#    && rm -rf /var/cache/apk/* /var/www/html
-#
-#
-#RUN apk --no-cache add git bash g++ make libpng-dev libpng-dev make gcc nodejs-npm~=8.9  \
-#    && rm -rf /var/cache/apk/*
-#
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
-#
-#
-#WORKDIR /var/www/project
+# Set working directory
+WORKDIR /var/www
 
-RUN apk update \
-    && apk upgrade \
-    && apk add zlib-dev zip php7-zip\
-    && docker-php-ext-configure zip --with-zlib-dir=/usr \
-    && docker-php-ext-install zip
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    nodejs \
+    libpq-dev \
+    mysql-client \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl
 
-RUN  apk add --update --no-cache \
-    libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    libcrypto1.0 libssl1.0 \
-    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install extensions
+RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl pdo pdo_pgsql pgsql
+RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
+RUN docker-php-ext-install gd
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
+# nvm environment variables
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 8
+
+# install nvm
+# https://github.com/creationix/nvm#install-script
+RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+
+# install node and npm
+RUN source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+# add node and npm to path so the commands are available
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+
+# Copy existing application directory contents
+COPY . /var/www
+
+# Copy existing application directory permissions
+COPY --chown=www:www . /var/www
+
+# Change current user to www
+#USER www
+
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]

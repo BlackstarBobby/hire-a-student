@@ -2,8 +2,42 @@
 
 namespace App\Models;
 
+use App\Models\CompanyJob as CompanyJobModel;
+use App\Models\User;
+use Barryvdh\LaravelIdeHelper\Eloquent;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
+/**
+ * App\Models\CompanyJob
+ *
+ * @property-read Collection|User[] $applicants
+ * @property-read \App\Models\Company $company
+ * @method static Builder|CompanyJobModel newModelQuery()
+ * @method static Builder|CompanyJobModel newQuery()
+ * @method static Builder|CompanyJobModel query()
+ * @mixin Eloquent
+ * @property int $id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int $company_id
+ * @property string $title
+ * @property string $description
+ * @property string $job_type
+ * @property string|null $salary
+ * @property string $city
+ * @method static Builder|CompanyJobModel whereCity($value)
+ * @method static Builder|CompanyJobModel whereCompanyId($value)
+ * @method static Builder|CompanyJobModel whereCreatedAt($value)
+ * @method static Builder|CompanyJobModel whereDescription($value)
+ * @method static Builder|CompanyJobModel whereId($value)
+ * @method static Builder|CompanyJobModel whereJobType($value)
+ * @method static Builder|CompanyJobModel whereSalary($value)
+ * @method static Builder|CompanyJobModel whereTitle($value)
+ * @method static Builder|CompanyJobModel whereUpdatedAt($value)
+ */
 class CompanyJob extends Model
 {
     protected $table = 'company_jobs';
