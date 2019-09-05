@@ -5,6 +5,25 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Resume
+ *
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume query()
+ * @mixin \Eloquent
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $user_id
+ * @property mixed $resume
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume whereResume($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Resume whereUserId($value)
+ */
 class Resume extends Model
 {
 

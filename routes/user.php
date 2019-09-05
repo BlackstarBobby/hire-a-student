@@ -7,6 +7,8 @@
  */
 
 
+use Illuminate\Support\Facades\Route;
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/user', [
         'as' => 'user.index',
