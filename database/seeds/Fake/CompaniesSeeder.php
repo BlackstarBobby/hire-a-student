@@ -51,7 +51,7 @@ class CompaniesSeeder extends Seeder
                 ]);
             }
 
-            $groups = $companies->split($numberOfCompanies / 1000);
+            $groups = $companies->split($numberOfCompanies / 100);
 
             foreach ($groups as $group) {
                 \Illuminate\Support\Facades\DB::table('companies')

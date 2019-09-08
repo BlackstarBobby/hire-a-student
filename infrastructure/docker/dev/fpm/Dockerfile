@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     nodejs \
     libpq-dev \
-    mysql-client \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
