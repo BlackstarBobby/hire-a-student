@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\CompanyJob as CompanyJobModel;
-use App\Models\User;
 use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;

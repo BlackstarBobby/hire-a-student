@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\CompanyJob;
-use App\Models\Resume;
 use App\Models\User;
 use App\Student\Search\CandidatesSearch;
 use Illuminate\Http\Request;

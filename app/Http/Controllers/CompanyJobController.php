@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\CompanyJob;
 use App\Models\User;
-use App\Student\Search\Filters\Filter;
 use App\Student\Search\JobsSearch;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Role;
 
 /**
  * Class CompanyJobController

@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\Company;
-use App\Models\CompanyJob;
 use App\Models\Resume;
 use App\Models\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {

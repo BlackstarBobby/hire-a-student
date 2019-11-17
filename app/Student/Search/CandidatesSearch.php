@@ -10,7 +10,6 @@ namespace App\Student\Search;
 
 
 use App\Models\Resume;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 
